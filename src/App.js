@@ -9,6 +9,8 @@ import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
 import Hero from './pages/Hero';
+import LiveScore from './pages/Live Score';
+import Stadiums from './pages/Stadiums';
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
@@ -67,10 +69,10 @@ const App = () => {
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={(<Hero />)} />
-                <Route path="/ecommerce" element={(<Ecommerce />)} />
+                <Route path="/Live Score" element={(<LiveScore />)} />
 
                 {/* pages  */}
-                <Route path="/orders" element={<Orders />} />
+                <Route path="/stadiums" element={<Stadiums />} />
                 <Route path="/employees" element={<Employees />} />
                 <Route path="/customers" element={<Customers />} />
 

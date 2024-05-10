@@ -20,11 +20,12 @@ const Sidebar = () => {
   const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-100 dark:text-gray-200  hover:bg-gray-800 m-2';
 
   return (
-    <div className="flex h-screen items-center align-middle bg-transparent">
-      <div className="pl-3 h-[80vh] overflow-auto bg-gradient-to-b from-blue-400 to-blue-900 my-4 rounded-tr-3xl rounded-br-3xl ml-0" style={{ paddingRight: '60px' }}>
+    <div className="flex h-screen items-center align-end bg-transparent">
+      <div className="pl-3 h-[70vh] overflow-auto bg-gradient-to-b from-blue-400 to-blue-900 my-4 rounded-tr-3xl rounded-br-3xl ml-0" style={{ paddingRight: '60px' }}>
         {activeMenu && (
           <>
-            <div className="flex justify-between items-center">
+          <div className='align-end items-end'>
+            <div className="flex justify-between items-center ">
               <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight text-white ">
                 <SiShopware /> <span>IPL</span>
               </Link>
@@ -39,12 +40,10 @@ const Sidebar = () => {
                 </button>
               </TooltipComponent>
             </div>
-            <div className="mt-10 ">
+            <div className="mt-10 flex justify-end items-end align-bottom">
               {links.map((item) => (
-                <div key={item.title}>
-                  <p className="text-gray-100 dark:text-gray-700 m-3 mt-4 uppercase">
-                    {item.title}
-                  </p>
+                <div >
+                  
                   {item.links.map((link) => (
                     <NavLink
                       to={`/${link.name}`}
@@ -61,6 +60,7 @@ const Sidebar = () => {
                   ))}
                 </div>
               ))}
+            </div>
             </div>
           </>
         )}

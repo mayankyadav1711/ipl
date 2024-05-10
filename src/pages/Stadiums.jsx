@@ -9,11 +9,11 @@ import "swiper/css/pagination";
 import { Pagination, EffectCoverflow } from "swiper/modules";
 import stadium from "../components/images/motera.webp"
 
-const Hero = () => {
+const Stadiums = () => {
 
   return (
     <>
-<div className="container flex flex-col items-center justify-center gap-14 w-full h-full">
+<div className="container flex align-middle items-center justify-center gap-14 w-full h-full">
                     <Swiper
                         effect={"coverflow"}
                         grabCursor={true}
@@ -29,7 +29,7 @@ const Hero = () => {
                         pagination={{
                             clickable: true,
                         }}
-                        className="mySwiper landingPageSwiper w-full overflow-hidden md:h-[500px] h-auto  flex md:flex-row flex-col items-center justify-center rounded-xl"
+                        className="mySwiper landingPageSwiper w-[70%] overflow-hidden md:h-[500px] h-auto  flex md:flex-row flex-col items-center justify-center rounded-xl"
                     >
                             return (
                               <>
@@ -62,4 +62,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Stadiums;
