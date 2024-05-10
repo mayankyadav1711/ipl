@@ -10,16 +10,16 @@ const Hero = () => {
     <div className="mt-24">
     <h1 className="text-center lg:text-6xl md:text-6xl text-4xl mb-24 font-medium">Live Score</h1>
       <div className="lg:flex justify-center grid gap-20 md:gap-0">
-      <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg lg:h-auto h-40 rounded-xl  lg:w-auto pr-2 lg:pr-8 pt-3 lg:pt-9 md:m-20 lg:m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center flex items-center relative pb-4 lg:pb-0">
+      <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg lg:h-auto h-40 rounded-xl  lg:w-auto  pt-3 md:m-20 lg:m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center flex items-center relative pb-4 lg:pb-0">
    {/* Dhoni Image on the left */}
-   <img src={dhoni} className="lg:w-72 lg:h-72 md:w-60 md:h-60 w-48 h-48 drop-shadow-2xl md:mr-16" alt="Dhoni" style={{marginTop: '-6rem'}} />
+   <img src={dhoni} className="lg:w-72 lg:h-72 md:w-60 md:h-60 w-48 h-48 drop-shadow-2xl mr-0 lg:mr-2 md:mr-16" alt="Dhoni" style={{marginTop: '-6rem'}} />
 
   {/* Content on the right */}
-  <div>
+  <div className="mr-4">
     <p className="font-medium text-black lg:text-xl md:text-2xl text-md mb-2 lg:mb-6">Chennai Super Kings</p>
     <div className="flex items-center">
       {/* Image */}
-      <div className="mx-4 rounded-full border-2 border-blue-400 lg:w-16 lg:h-16 md:w-20 md:h-20 w-12 h-12 flex justify-center items-center">
+      <div className="lg:mx-4 rounded-full border-2 border-blue-400 lg:w-16 lg:h-16 md:w-20 md:h-20 w-12 h-12 flex justify-center items-center">
         <img src={csk} className="lg:w-10 lg:h-8 md:w-12 md:h-10 w-8 h-6 rounded-full" alt="Team Logo" />
       </div>
 
@@ -34,7 +34,7 @@ const Hero = () => {
 </div>
 
 
-<div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg lg:h-auto md:h-auto h-40 rounded-xl  lg:w-auto pr-2 lg:pr-8 pt-3 lg:pt-9 md:m-20 lg:m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center flex items-center relative pb-4 lg:pb-0">
+<div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg lg:h-auto md:h-auto h-40 rounded-xl  lg:w-auto pr-2 lg:pr-8 pt-3 md:m-20 lg:m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center flex items-center relative pb-4 lg:pb-0">
   
   {/* Content on the right */}
   <div>

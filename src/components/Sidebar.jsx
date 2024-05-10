@@ -20,7 +20,7 @@ const Sidebar = () => {
   const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-100 dark:text-gray-200  hover:bg-gray-800 m-2';
 
   return (
-    <div className="flex h-screen items-center align-middle bg-main-bg">
+    <div className="flex h-screen items-center align-middle bg-transparent">
       <div className="pl-3 h-[80vh] overflow-auto bg-gradient-to-b from-blue-400 to-blue-900 my-4 rounded-tr-3xl rounded-br-3xl ml-0" style={{ paddingRight: '60px' }}>
         {activeMenu && (
           <>
@@ -32,8 +32,8 @@ const Sidebar = () => {
                 <button
                   type="button"
                   onClick={() => setActiveMenu(!activeMenu)}
-                  style={{ color: currentColor }}
-                  className="text-xl rounded-full p-3 hover:bg-gray-600 mt-4 block md:hidden"
+                  style={{ color: "white" }}
+                  className="text-xl rounded-full p-3 hover:bg-gray-600 mt-4 block lg:hidden"
                 >
                   <MdOutlineCancel />
                 </button>
