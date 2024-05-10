@@ -3,9 +3,60 @@ import csk from "../components/images/csk.png"
 import dhoni from "../components/images/msdhoni.png"
 import kohli from "../components/images/kohli.png"
 import rcb from "../components/images/rcb.jpeg"
+import { FaRunning } from "react-icons/fa";
+import { MdSportsCricket } from "react-icons/md";
+import { GiCricketBat } from "react-icons/gi";
+
+const dummyRecords = [
+    {
+      teamName: "Team A",
+      name: "Player 1",
+      runs: 50,
+      fours: 8,
+      sixes: 2,
+      strikeRate: 125.0,
+      status: "Active"
+    },
+    {
+      teamName: "Team B",
+      name: "Player 2",
+      runs: 40,
+      fours: 6,
+      sixes: 1,
+      strikeRate: 110.0,
+      status: "Inactive"
+    },
+    {
+      teamName: "Team C",
+      name: "Player 3",
+      runs: 70,
+      fours: 12,
+      sixes: 3,
+      strikeRate: 150.0,
+      status: "Active"
+    },
+    {
+      teamName: "Team D",
+      name: "Player 4",
+      runs: 60,
+      fours: 10,
+      sixes: 2,
+      strikeRate: 130.0,
+      status: "Active"
+    },
+    {
+      teamName: "Team E",
+      name: "Player 5",
+      runs: 45,
+      fours: 7,
+      sixes: 1,
+      strikeRate: 115.0,
+      status: "Inactive"
+    },
+  ];
+  
 
 const Hero = () => {
-
   return (
     <div className="mt-24">
     <h1 className="text-center lg:text-6xl md:text-6xl text-4xl mb-24 font-medium">Live Score</h1>
@@ -58,8 +109,92 @@ const Hero = () => {
 </div>
     </div>
 
-    
-     
+    <div className="flex m-3 flex-wrap justify-center gap-6 items-center">
+         
+   
+
+    <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
+              <button
+                type="button"
+                style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
+                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
+              >
+                <FaRunning />
+              </button>
+              <div className="text-left">
+    <p className="mt-3">
+      <span className="text-lg font-semibold">10</span>
+    </p>
+    <p className="text-xl font-bold text-gray-800 mt-1">Twos</p>
+  </div>
+            </div>
+            <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
+              <button
+                type="button"
+                style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
+                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
+              >
+                <MdSportsCricket />
+              </button>
+              <div className="text-left">
+    <p className="mt-3">
+      <span className="text-lg font-semibold">9</span>
+    </p>
+    <p className="text-xl font-bold text-gray-800 mt-1">Sixes</p>
+  </div>
+            </div>
+            <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
+              <button
+                type="button"
+                style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
+                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
+              >
+                <GiCricketBat />
+              </button>
+              <div className="text-left">
+    <p className="mt-3">
+      <span className="text-lg font-semibold">10</span>
+    </p>
+    <p className="text-xl font-bold text-gray-800 mt-1">Fours</p>
+  </div>
+            </div>
+        </div>
+        <div className=" overflow-x-auto">
+  <table className="table-fixed rounded-3xl ml-4 ">
+    {/* Table Head */}
+    <thead className="sticky top-0 bg-white text-black rounded-3xl">
+  <tr>
+    <th className="px-4 py-2" colSpan="7">Playing - Batsman</th>
+  </tr>
+  <tr>
+    <th className="px-4 py-2">Team Name</th>
+    <th className="px-4 py-2">Name</th>
+    <th className="px-4 py-2">Runs</th>
+    <th className="px-4 py-2">Fours</th>
+    <th className="px-4 py-2">Sixes</th>
+    <th className="px-4 py-2">Strike Rate</th>
+    <th className="px-4 py-2">Status</th>
+  </tr>
+</thead>
+
+    {/* Table Body */}
+    <tbody className="divide-y divide-blue-100">
+      {/* Dummy Records */}
+      {dummyRecords.map((record, index) => (
+        <tr key={index} className={index % 2 === 0 ? 'bg-blue-50' : 'bg-blue-200'}>
+          <td className="px-4 py-2">{record.teamName}</td>
+          <td className="px-4 py-2">{record.name}</td>
+          <td className="px-4 py-2">{record.runs}</td>
+          <td className="px-4 py-2">{record.fours}</td>
+          <td className="px-4 py-2">{record.sixes}</td>
+          <td className="px-4 py-2">{record.strikeRate}</td>
+          <td className="px-4 py-2">{record.status}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
     </div>
   );
 };
