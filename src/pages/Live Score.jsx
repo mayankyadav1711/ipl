@@ -2,7 +2,7 @@ import React from "react";
 import csk from "../components/images/csk.png"
 import dhoni from "../components/images/msdhoni.png"
 import kohli from "../components/images/kohli.png"
-import rcb from "../components/images/rcb.jpeg"
+import rcb from "../components/images/rcb.png"
 import { FaRunning } from "react-icons/fa";
 import { MdSportsCricket } from "react-icons/md";
 import { GiCricketBat } from "react-icons/gi";

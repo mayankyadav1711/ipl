@@ -11,6 +11,7 @@ import { useStateContext } from './contexts/ContextProvider';
 import Hero from './pages/Hero';
 import LiveScore from './pages/Live Score';
 import Stadiums from './pages/Stadiums';
+import Teams from './pages/Teams';
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
@@ -73,7 +74,7 @@ const App = () => {
 
                 {/* pages  */}
                 <Route path="/stadiums" element={<Stadiums />} />
-                <Route path="/employees" element={<Employees />} />
+                <Route path="/teams" element={<Teams />} />
                 <Route path="/customers" element={<Customers />} />
 
                 {/* apps  */}
