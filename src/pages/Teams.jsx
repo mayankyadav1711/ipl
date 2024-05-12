@@ -13,7 +13,7 @@ import srh from "../components/images/srh.png"
 const Teams = () => {
   return (
     <>
-    <div className='container m-6 flex flex-wrap gap-6 justify-center items-center'>
+    <div className='container lg:m-6 flex flex-wrap lg:gap-6 gap-6 justify-center sm:items-center'>
     <div className="card csk">
     <div className="content">
       <div className="back">
