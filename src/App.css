@@ -126,7 +126,7 @@
 }
 .dc .front,
 .back {
-  background: linear-gradient(to right, #003668, #f6812e); /* Delhi Capitals gradient colors *//* dc gradient colors */
+  background: linear-gradient(to right, #003668, #f62e2e); /* Delhi Capitals gradient colors *//* dc gradient colors */
   color: white; /* Text color */
 }
 .dc .content {
@@ -301,7 +301,7 @@
   background-color: #670812d6;
 }
 .dc .front-content .badge {
-  background-color: #d15801;
+  background-color: #d10101;
 }
 .gt .front-content .badge {
   background-color: #0d1a30;
@@ -339,7 +339,7 @@
   box-shadow: 0px 0px 5px 2px #c81c2dc8;
 }
 .dc .description {
-  box-shadow: 0px 0px 5px 2px #ed6a0cac;
+  box-shadow: 0px 0px 5px 2px #ed0c0cac;
 }
 .gt .description {
   box-shadow: 0px 0px 5px 2px #0d1a30;
@@ -397,7 +397,7 @@
   animation: floating 2600ms infinite linear;
 }
 .dc .circle {
-  background-color: #FF822A;
+  background-color: #ff2a2a;
 }
 .gt .circle {
   background-color: #0b7ebc;
@@ -500,11 +500,7 @@
   border-radius: 10px;
   width: 220px;
   height: 300px;
-  background: linear-gradient(
-    to right,
-    #fdb913,
-    #f85c00
-  ); 
+  
   -webkit-box-shadow: 1px 1px 12px #f9ce1068;
   box-shadow: 1px 1px 12px #f9ce106f;
   -webkit-transform: preserve-3d;
@@ -549,7 +545,46 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
-
+.csk .cover {
+  background-color: #f5e48f;
+  color: black;
+}
+.rcb .cover {
+  background-color: #2b2a29;
+  color: white;
+}
+.dc .cover {
+  background-color: #fc4555;
+  color: white;
+}
+.gt .cover {
+  background-color: #036397;
+  color: white;
+}
+.kkr .cover {
+  background-color: #e1a01d;
+  color: white;
+}
+.lsg .cover {
+  background-color: #0248bc;
+  color: white;
+}
+.mi .cover {
+  background-color: #183f81;
+  color: white;
+}
+.pk .cover {
+  background-color: #222e56;
+  color: white;
+}
+.rr .cover {
+  background-color: #4a0322 ;
+  color: white;
+}
+.srh .cover {
+  background-color: #722424 ;
+  color: white;
+}
 .book:hover .cover {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -564,9 +599,3 @@
 }
 
 
-/* Define CSS variables for team gradients */
-:root {
-  --team1-gradient: linear-gradient(to right, #fdb913, #f85c00);
-  --team2-gradient: linear-gradient(to right, #003a6b, #006db6);
-  /* Add more gradients for other teams as needed */
-}
