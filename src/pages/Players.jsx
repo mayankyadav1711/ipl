@@ -229,7 +229,7 @@ const Players = () => {
         {/* Separate the name and role into different <p> elements */}
         <p className="block max-w-[150px]">{player.name}</p>
         <p className="block max-w-[150px] ml-2">{player.role}</p>
-        <button class="btn-53">
+        {/* <button class="btn-53">
   <div class="original">Button</div>
   <div class="letters">
     
@@ -240,7 +240,7 @@ const Players = () => {
     <span>O</span>
     <span>N</span>
   </div>
-</button>
+</button> */}
       </div>
       <div className="cover flex flex-col"> 
         <img src={player.image} className="w-[100%] drop-shadow-2xl" alt={player.name} />
