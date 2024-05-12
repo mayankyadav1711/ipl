@@ -225,16 +225,29 @@ const Players = () => {
 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
   {allRounders.map((player, index) => (
     <div key={index} className={`book justify-center text-center ${player.team.toLowerCase()}`}>
-      <div className="inline-block">
+      <div className="inline-block justify-center items-center">
         {/* Separate the name and role into different <p> elements */}
         <p className="block max-w-[150px]">{player.name}</p>
         <p className="block max-w-[150px] ml-2">{player.role}</p>
+        <button class="btn-53">
+  <div class="original">Button</div>
+  <div class="letters">
+    
+    <span>B</span>
+    <span>U</span>
+    <span>T</span>
+    <span>T</span>
+    <span>O</span>
+    <span>N</span>
+  </div>
+</button>
       </div>
       <div className="cover flex flex-col"> 
         <img src={player.image} className="w-[100%] drop-shadow-2xl" alt={player.name} />
         {/* Display the name and role on different lines */}
         <p className='mt-4'>{player.name}</p>
-        <p>{player.role}</p>
+      
+
       </div>
     </div>
   ))}
