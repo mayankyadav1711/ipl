@@ -1,4 +1,4 @@
-@import url('https://cdn.syncfusion.com/ej2/material.css');
+@import url("https://cdn.syncfusion.com/ej2/material.css");
 
 .sidebar {
   /* box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px; */
@@ -7,13 +7,14 @@
 .navbar {
   z-index: 10000;
 }
-@media  screen and (max-width:800px) {
-  .sidebar{
+@media screen and (max-width: 800px) {
+  .sidebar {
     z-index: 10000000;
   }
 }
 
-.e-dlg-center-center, .e-quick-popup-wrapper.e-device{
+.e-dlg-center-center,
+.e-quick-popup-wrapper.e-device {
   z-index: 1000000 !important;
 }
 
@@ -30,9 +31,9 @@
 
 /* color-picker style  */
 
- #preview {
+#preview {
   background: transparent
-    url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen.png')
+    url("https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen.png")
     no-repeat;
   display: inline-block;
   height: 80px;
@@ -42,7 +43,14 @@
   background-color: #008000;
 }
 
-.e-input-group:not(.e-float-icon-left), .e-input-group.e-success:not(.e-float-icon-left), .e-input-group.e-warning:not(.e-float-icon-left), .e-input-group.e-error:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left){
+.e-input-group:not(.e-float-icon-left),
+.e-input-group.e-success:not(.e-float-icon-left),
+.e-input-group.e-warning:not(.e-float-icon-left),
+.e-input-group.e-error:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
   border: none;
 }
 
@@ -68,7 +76,7 @@
 }
 .card {
   overflow: visible;
-  width: 190px;
+  width: 220px;
   height: 254px;
 }
 
@@ -81,7 +89,8 @@
   border-radius: 5px;
 }
 
-.front, .back {
+.front,
+.back {
   background-color: #151515;
   position: absolute;
   width: 100%;
@@ -91,20 +100,94 @@
   border-radius: 5px;
   overflow: hidden;
 }
-.csk .front, .back{
-  background: linear-gradient(to right, #FDB913, #F85C00); /* rcb gradient colors */
+.csk .front,
+.back {
+  background: linear-gradient(
+    to right,
+    #fdb913,
+    #f85c00
+  ); /* rcb gradient colors */
   color: white; /* Text color */
-  }
-  .csk .content{
-    box-shadow: 0px 0px 10px 1px #c66d06ee;
-  }
-  .rcb .front, .back{
-    background: linear-gradient(to right, #000000, #C81C2E); /* RCB gradient colors */
-    color: white; /* Text color */
-    }
-    .rcb .content{
-      box-shadow: 0px 0px 10px 1px  #c81c2dc8;
-    }
+}
+.csk .content {
+  box-shadow: 0px 0px 10px 1px #c66d06ee;
+}
+.rcb .front,
+.back {
+  background: linear-gradient(
+    to right,
+    #000000,
+    #c81c2e
+  ); /* RCB gradient colors */
+  color: white; /* Text color */
+}
+.rcb .content {
+  box-shadow: 0px 0px 10px 1px #2b2a29;
+}
+.dc .front,
+.back {
+  background: linear-gradient(to right, #003668, #f6812e); /* Delhi Capitals gradient colors *//* dc gradient colors */
+  color: white; /* Text color */
+}
+.dc .content {
+  box-shadow: 0px 0px 10px 1px #2e5375;
+}
+.gt .front,
+.back {
+  background: linear-gradient(to right,#0d1a30, #0b7ebc ); /* Gujarat Titans gradient colors */
+  color: white; /* Text color */
+}
+.gt .content {
+  box-shadow: 0px 0px 10px 1px #003DA5;
+}
+.kkr .front,
+.back {
+  background: linear-gradient(to right,#28204a, #e1a01d ); /* Gujarat Titans gradient colors */
+  color: white; /* Text color */
+}
+.kkr .content {
+  box-shadow: 0px 0px 10px 1px #28204a;
+}
+.lsg .front,
+.back {
+  background: linear-gradient(to right,#0248bc, #ffffff ); /* Gujarat Titans gradient colors */
+  color: white; /* Text color */
+}
+.lsg .content {
+  box-shadow: 0px 0px 10px 1px #0249bc9f;
+}
+.mi .front,
+.back {
+  background: linear-gradient(to right,#133166, #2d6ab1 ); /* Gujarat Titans gradient colors */
+  color: white; /* Text color */
+}
+.mi .content {
+  box-shadow: 0px 0px 10px 1px #133166;
+}
+.pk .front,
+.back {
+  background: linear-gradient(to right,#d71920, #283665 ); /* Gujarat Titans gradient colors */
+  color: white; /* Text color */
+}
+.pk .content {
+  box-shadow: 0px 0px 10px 1px #d71920;
+}
+.rr .front,
+.back {
+  background: linear-gradient(to right,#d21470, #042857 ); /* Gujarat Titans gradient colors */
+  color: white; /* Text color */
+}
+.rr .content {
+  box-shadow: 0px 0px 10px 1px #eb83b5;
+}
+.srh .front,
+.back {
+  background: linear-gradient(to right,#f26522, #722424 ); /* Gujarat Titans gradient colors */
+  color: white; /* Text color */
+}
+.srh .content {
+  box-shadow: 0px 0px 10px 1px #f26522;
+}
 .back {
   width: 100%;
   height: 100%;
@@ -116,11 +199,19 @@
 
 .back::before {
   position: absolute;
-  content: ' ';
+  content: " ";
   display: block;
   width: 160px;
   height: 160%;
-  background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff9966,
+    #ff9966,
+    #ff9966,
+    #ff9966,
+    transparent
+  );
   animation: rotation_481 5000ms infinite linear;
 }
 
@@ -137,11 +228,35 @@
   align-items: center;
   gap: 30px;
 }
-.csk .back-content{
+.csk .back-content {
   background: #fdbb13;
 }
-.rcb .back-content{
-  background: #c81c2d;
+.rcb .back-content {
+  background: #2b2a29;
+}
+.dc .back-content {
+  background: #004C93;
+}
+.gt .back-content {
+  background: #0d1a30;
+}
+.kkr .back-content {
+  background: #28204a;
+}
+.lsg .back-content {
+  background: #ffffff;
+}
+.mi .back-content {
+  background: #2d6ab1;
+}
+.pk .back-content {
+  background: #d71920;
+}
+.rr .back-content {
+  background: #cf5a93;
+}
+.srh .back-content {
+  background: #f26522;
 }
 .card:hover .content {
   transform: rotateY(180deg);
@@ -180,10 +295,34 @@
   width: fit-content;
 }
 .csk .front-content .badge {
-  background-color: #F85C00;
+  background-color: #f85c00;
 }
 .rcb .front-content .badge {
   background-color: #670812d6;
+}
+.dc .front-content .badge {
+  background-color: #d15801;
+}
+.gt .front-content .badge {
+  background-color: #0d1a30;
+}
+.kkr .front-content .badge {
+  background-color: #28204a;
+}
+.lsg .front-content .badge {
+  background-color: #0248bc;
+}
+.mi .front-content .badge {
+  background-color: #133166;
+}
+.pk .front-content .badge {
+  background-color: #d71920;
+}
+.rr .front-content .badge {
+  background-color: #d21470;
+}
+.srh .front-content .badge {
+  background-color: #f26522;
 }
 .description {
   box-shadow: 0px 0px 10px 5px #00000088;
@@ -195,11 +334,33 @@
 }
 .csk .description {
   box-shadow: 0px 0px 5px 2px #f7c966c5;
- 
 }
 .rcb .description {
-  box-shadow: 0px 0px 5px 2px  #c81c2dc8;
-
+  box-shadow: 0px 0px 5px 2px #c81c2dc8;
+}
+.dc .description {
+  box-shadow: 0px 0px 5px 2px #ed6a0cac;
+}
+.gt .description {
+  box-shadow: 0px 0px 5px 2px #0d1a30;
+}
+.kkr .description {
+  box-shadow: 0px 0px 5px 2px #28204a;
+}
+.lsg .description {
+  box-shadow: 0px 0px 5px 2px #0249bc;
+}
+.mi .description {
+  box-shadow: 0px 0px 5px 2px #133166;
+}
+.pk .description {
+  box-shadow: 0px 0px 5px 2px #d71920;
+}
+.rr .description {
+  box-shadow: 0px 0px 5px 2px #d21470b1;
+}
+.srh .description {
+  box-shadow: 0px 0px 5px 2px #f26522;
 }
 .title {
   font-size: 11px;
@@ -235,7 +396,30 @@
   filter: blur(15px);
   animation: floating 2600ms infinite linear;
 }
-
+.dc .circle {
+  background-color: #FF822A;
+}
+.gt .circle {
+  background-color: #0b7ebc;
+}
+.kkr .circle {
+  background-color: #28204a;
+}
+.lsg .circle {
+  background-color: #ffffff;
+}
+.mi .circle {
+  background-color: #2d6ab1;
+}
+.pk .circle {
+  background-color: #283665;
+}
+.rr .circle {
+  background-color: #042857;
+}
+.srh .circle {
+  background-color: #722424;
+}
 #bottom {
   background-color: #ff8866;
   left: 50px;
@@ -246,11 +430,33 @@
 }
 .csk #bottom {
   background-color: #fdbb13c5;
- 
 }
 .rcb #bottom {
   background-color: #c81c2d73;
- 
+}
+.dc #bottom {
+  background-color: #2c3f5f;
+}
+.gt #bottom {
+  background-color: #1e3660;
+}
+.kkr #bottom {
+  background-color: #d69410 ;
+}
+.lsg #bottom {
+  background-color: #0248bc ;
+}
+.mi #bottom {
+  background-color: #133166 ;
+}
+.pk #bottom {
+  background-color: #d71920 ;
+}
+.rr #bottom {
+  background-color: #d21470 ;
+}
+.srh #bottom {
+  background-color: #f26522 ;
 }
 #right {
   background-color: #ff2233;
@@ -259,6 +465,18 @@
   width: 30px;
   height: 30px;
   animation-delay: -1800ms;
+}
+.kkr #right{
+  background-color: #1e1546;
+}
+.lsg #right{
+  background-color: #0248bc;
+}
+.mi #right{
+  background-color: #4486d0;
+}
+.srh #right{
+  background-color: #f26522;
 }
 
 @keyframes floating {
