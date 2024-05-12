@@ -56,42 +56,56 @@ const stadiumImages = [
   // Add other images and names here
 ];
 const Stadiums = () => {
-    
+  const [currentImage, setCurrentImage] = useState(stadiumImages[0].image);
+
   return (
-    <>
-      <div className="container flex align-middle items-center justify-center gap-14 w-full h-full">
-        <Swiper
-          effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={"auto"}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-          }}
-          modules={[EffectCoverflow, Pagination]}
-          pagination={{ clickable: true }}
-          className="mySwiper landingPageSwiper w-[70%] overflow-hidden md:h-[500px] h-auto  flex md:flex-row flex-col items-center justify-center rounded-xl"
-        >
-          {stadiumImages.map((stadium, index) => (
-            <SwiperSlide key={index} className="w-full h-full">
-              <img
-                src={stadium.image}
-                alt={`stadium-${index}`}
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute bottom-0 left-0 p-4 bg-black bg-opacity-50 text-white">
-                {stadium.name}
-              </div>
-              <div className="absolute top-0 right-0 p-4 bg-black bg-opacity-50 text-white">
-                Capacity : {stadium.capacity}
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <div className="relative w-full h-screen flex justify-center items-center">
+      {/* Dynamic background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${currentImage})` }}
+      >
+        {/* Semi-transparent overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
-    </>
+
+      {/* Swiper Carousel */}
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+        }}
+        modules={[EffectCoverflow, Pagination]}
+        pagination={{ clickable: true }}
+        className="mySwiper landingPageSwiper w-[70%] overflow-hidden md:h-[500px] h-auto  flex md:flex-row flex-col items-center justify-center rounded-xl"
+        onSlideChange={(swiper) => {
+          // Update currentImage state when carousel slide changes
+          setCurrentImage(stadiumImages[swiper.activeIndex].image);
+        }}
+      >
+        {stadiumImages.map((stadium, index) => (
+          <SwiperSlide key={index} className="w-full h-full">
+            <img
+              src={stadium.image}
+              alt={`stadium-${index}`}
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute bottom-0 left-0 p-4 bg-black bg-opacity-50 text-white">
+              {stadium.name}
+            </div>
+            <div className="absolute top-0 right-0 p-4 bg-black bg-opacity-50 text-white">
+              Capacity : {stadium.capacity}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 
 export default Stadiums;
+
