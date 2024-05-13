@@ -15,6 +15,7 @@ import Teams from './pages/Teams';
 import Players from './pages/Players';
 import Events from './pages/Events';
 import Upcoming from './pages/Upcoming';
+import Profile from './pages/Profile';
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
@@ -82,6 +83,7 @@ const App = () => {
                 <Route path="/players" element={<Players />} />
                 <Route path="/events" element={<Events />} />
                 <Route path="/upcomingEvents" element={<Upcoming />} />
+                <Route path="/profile" element={<Profile />} />
 
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />
