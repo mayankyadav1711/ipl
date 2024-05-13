@@ -5,7 +5,7 @@ import vs from "../components/images/versus.png"
 import motera from "../components/images/motera.webp"
 import trophy from "../components/images/trophy.svg"
 
-const Events = () => {
+const Upcoming = () => {
     const [activeTab, setActiveTab] = useState('stats');
 
     const handleTabClick = (tabId) => {
@@ -266,4 +266,4 @@ const Events = () => {
     );
 };
 
-export default Events;
+export default Upcoming;
