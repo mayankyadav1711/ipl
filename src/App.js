@@ -13,6 +13,7 @@ import LiveScore from './pages/Live Score';
 import Stadiums from './pages/Stadiums';
 import Teams from './pages/Teams';
 import Players from './pages/Players';
+import Events from './pages/Events';
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
@@ -78,6 +79,7 @@ const App = () => {
                 <Route path="/teams" element={<Teams />} />
                 <Route path="/customers" element={<Customers />} />
                 <Route path="/players" element={<Players />} />
+                <Route path="/events" element={<Events />} />
 
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />

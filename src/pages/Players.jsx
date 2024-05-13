@@ -2,215 +2,184 @@ import React from 'react';
 
 const Players = () => {
   // Player data
-  const cskplayers = [
+  const players = [
     {
-      "name": "Ruturaj Gaikwad",
-      "role": "Batter",
-      "playercode": "5443",
-      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/102.png",
-      "team":"CSK"
-    },
-    {
-      "name": "Devon Conway",
-      "role": "Batter",
-      "playercode": "20572",
-      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/601.png",
-      "team":"CSK"
-    },
-    {
-      "name": "MS Dhoni",
+        "name": "MS Dhoni",
       "role": "Wicketkeeper Batter",
       "playercode": "1",
       "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/57.png",
-      "team":"CSK"
-    },
-    {
-        "name": "Ajinkya Rahane",
+        "team":"CSK"
+      },
+      {
+        "name": "Rajat Patidar",
         "role": "Batter",
-        "playercode": "135",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/44.png",
-        "team":"CSK"
+        "playercode": "5471",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/597.png",
+        "team":"RCB"
       },
       {
-        "name": "Shaik Rasheed",
+        "name": "Virat Kohli",
         "role": "Batter",
-        "playercode": "5612",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/778.png",
-        "team":"CSK"
+        "playercode": "164",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/2.png",
+        "team":"RCB"
       },
       {
-        "name": "Sameer Rizvi",
+        "name": "Rishabh Pant",
+      "role": "Wicketkeeper Batter",
+      "playercode": "2972",
+      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/18.png",
+        "team":"DC"
+      },
+      {
+        "name": "Shubman Gill",
         "role": "Batter",
-        "playercode": "20689",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/1229.png",
-        "team":"CSK"
+        "playercode": "3761",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/62.png",
+        "team":"GT"
       },
       {
-        "name": "Avanish Rao Aravelly",
-        "role": "Wicketkeeper Batter",
-        "playercode": "20715",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/2794.png",
-        "team":"CSK"
+        "name": "Shikhar Dhawan",
+      "role": "Batter",
+      "playercode": "41",
+      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/11.png",
+        "team":"PK"
       },
       {
-        "name": "Ravindra Jadeja",
-        "role": "All-rounder",
-        "playercode": "9",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/46.png",
-        "team":"CSK"
+        "name": "Rinku Singh",
+      "role": "Batter",
+      "playercode": "3830",
+      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/152.png",
+        "team":"KKR"
       },
       {
-        "name": "Mitchell Santner",
-        "role": "All-rounder",
-        "playercode": "1903",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/75.png",
-        "team":"CSK"
+        "name": "Rohit Sharma",
+      "role": "Batter",
+      "playercode": "107",
+      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/6.png",
+        "team":"MI"
       },
       {
-        "name": "Moeen Ali",
-        "role": "All-rounder",
-        "playercode": "1735",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/206.png",
-        "team":"CSK"
+        "name": "KL Rahul",
+      "role": "Wicketkeeper Batter",
+      "playercode": "1125",
+      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/19.png",
+        "team":"LSG"
       },
       {
-        "name": "Shivam Dube",
-        "role": "All-rounder",
-        "playercode": "5431",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/211.png",
-        "team":"CSK"
+        "name": "Sanju Samson",
+      "role": "Wicketkeeper Batter",
+      "playercode": "258",
+      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/190.png",
+        "team":"RR"
       },
       {
-        "name": "Nishant Sindhu",
+        "name": "Washington Sundar",
+      "role": "All-rounder",
+      "playercode": "2973",
+      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/20.png",
+        "team":"SRH"
+      },
+      {
+        "name": "Cameron Green",
         "role": "All-Rounder",
-        "playercode": "5615",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/791.png",
-        "team":"CSK"
+        "playercode": "5602",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/550.png",
+        "team":"RCB"
       },
       {
-        "name": "Ajay Mandal",
-        "role": "All-Rounder",
-        "playercode": "5811",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/1931.png",
-        "team":"CSK"
+        "name": "Swapnil Singh",
+        "role": "Bowling all-rounder",
+        "playercode": "3180",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/1483.png",
+        "team":"RCB"
       },
       {
-        "name": "Rachin Ravindra",
-        "role": "allRounder",
-        "playercode": "20684",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/724.png",
-        "team":"CSK"
-      },
-      {
-        "name": "Shardul Thakur",
-        "role": "allRounder",
-        "playercode": "1745",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/105.png",
-        "team":"CSK"
-      },
-      {
-        "name": "Daryl Mitchell",
+        "name": "Mayank Dagar",
         "role": "All-rounder",
-        "playercode": "20617",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/83.png",
-        "team":"CSK"
+        "playercode": "2968",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/1547.png",
+        "team":"RCB"
       },
       {
-        "name": "Richard Gleeson",
-        "role": "Bowler",
-        "playercode": "20730",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/1219.png",
-        "team":"CSK"
+        "name": "Manoj Bhandage",
+        "role": "All-Rounder",
+        "playercode": "5645",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/1485.png",
+        "team":"RCB"
       },
       {
-        "name": "Rajvardhan Hangargekar",
+        "name": "Akash Deep",
         "role": "Bowler",
-        "playercode": "20571",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/783.png",
-        "team":"CSK"
+        "playercode": "14800",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/1007.png",
+        "team":"RCB"
       },
       {
-        "name": "Deepak Chahar",
+        "name": "Alzarri Joseph",
         "role": "Bowler",
-        "playercode": "140",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/91.png",
-        "team":"CSK"
+        "playercode": "3098",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/229.png",
+        "team":"RCB"
       },
       {
-        "name": "Maheesh Theekshana",
+        "name": "Lockie Ferguson",
         "role": "Bowler",
-        "playercode": "20570",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/629.png",
-        "team":"CSK"
+        "playercode": "3729",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/69.png",
+        "team":"RCB"
       },
       {
-        "name": "Mukesh Choudhary",
+        "name": "Mohammed Siraj",
         "role": "Bowler",
-        "playercode": "20575",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/970.png",
-        "team":"CSK"
+        "playercode": "3840",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/63.png",
+        "team":"RCB"
       },
       {
-        "name": "Mustafizur Rahman",
-        "role": "Bowler",
-        "playercode": "1594",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/258.png",
-        "team":"CSK"
+        "name": "Yash Dayal",
+        "role": "",
+        "playercode": "20591",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/978.png",
+        "team":"RCB"
       },
       {
-        "name": "Prashant Solanki",
+        "name": "Tom Curran",
         "role": "Bowler",
-        "playercode": "20576",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/972.png",
-        "team":"CSK"
+        "playercode": "3646",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/309.png",
+        "team":"RCB"
       },
       {
-        "name": "Simarjeet Singh",
+        "name": "Reece Topley",
         "role": "Bowler",
-        "playercode": "10789",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/622.png",
-        "team":"CSK"
+        "playercode": "5607",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/574.png",
+        "team":"RCB"
       },
       {
-        "name": "Tushar Deshpande",
+        "name": "Himanshu Sharma",
         "role": "Bowler",
-        "playercode": "3257",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/539.png",
-        "team":"CSK"
+        "playercode": "5628",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/1568.png",
+        "team":"RCB"
       },
       {
-        "name": "Matheesha Pathirana",
+        "name": "Vyshak Vijay Kumar",
         "role": "Bowler",
-        "playercode": "20627",
-        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/1014.png",
-        "team":"CSK"
+        "playercode": "1097",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/2034.png",
+        "team":"RCB"
+      },
+      {
+        "name": "Rajan Kumar",
+        "role": "Bowler",
+        "playercode": "5657",
+        "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/1503.png",
+        "team":"RCB"
       }
   ];
-  const rcbplayers = [
-    {
-      "name": "Ruturaj Gaikwad",
-      "role": "Batter",
-      "playercode": "5443",
-      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/102.png",
-      "team":"PK"
-    },
-    {
-      "name": "Devon Conway",
-      "role": "Batter",
-      "playercode": "20572",
-      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2023/601.png",
-      "team":"RR"
-    },
-    {
-      "name": "MS Dhoni",
-      "role": "Wicketkeeper Batter",
-      "playercode": "1",
-      "image": "https://bcciplayerimages.s3.ap-south-1.amazonaws.com/ipl/IPLHeadshot2024/57.png",
-      "team":"SRH"
-    },
-    
-  ];
-  const players = [...cskplayers, ...rcbplayers];
+
   const allRounders = players.filter(player => player.role.includes("All-rounder"));
   const batsmen = players.filter(player => player.role.includes("Batter") && !player.role.includes("Wicketkeeper"));
   const wicketkeeperBatsmen = players.filter(player => player.role.includes("Wicketkeeper Batter"));
@@ -225,22 +194,22 @@ const Players = () => {
 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
   {allRounders.map((player, index) => (
     <div key={index} className={`book justify-center text-center ${player.team.toLowerCase()}`}>
+     
       <div className="inline-block justify-center items-center">
         {/* Separate the name and role into different <p> elements */}
         <p className="block max-w-[150px]">{player.name}</p>
         <p className="block max-w-[150px] ml-2">{player.role}</p>
-        {/* <button class="btn-53">
-  <div class="original">Button</div>
+        <button class="btn-53">
+  <div class="original">Know More</div>
   <div class="letters">
     
-    <span>B</span>
-    <span>U</span>
-    <span>T</span>
-    <span>T</span>
-    <span>O</span>
-    <span>N</span>
+    <span>C</span>
+    <span>L</span>
+    <span>I</span>
+    <span>C</span>
+    <span>K</span>
   </div>
-</button> */}
+</button> 
       </div>
       <div className="cover flex flex-col"> 
         <img src={player.image} className="w-[100%] drop-shadow-2xl" alt={player.name} />
@@ -301,6 +270,7 @@ const Players = () => {
           ))}
         </div>
       </div>
+      
     </div>
   );
 };

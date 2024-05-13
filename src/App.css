@@ -501,8 +501,8 @@
   width: 220px;
   height: 300px;
   
-  -webkit-box-shadow: 1px 1px 12px #f9ce1068;
-  box-shadow: 1px 1px 12px #f9ce106f;
+  -webkit-box-shadow: 1px 1px 12px #0363979b;
+  box-shadow: 1px 1px 12px #036397a0;
   -webkit-transform: preserve-3d;
   -ms-transform: preserve-3d;
   transform: preserve-3d;
@@ -523,7 +523,7 @@
 .cover {
   top: 0;
   position: absolute;
-  background-color: #f5e48f;
+  background-color: #acd4ea;
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -533,7 +533,7 @@
   -webkit-transform-origin: 0;
   -ms-transform-origin: 0;
   transform-origin: 0;
-  -webkit-box-shadow: 1px 1px 12px #f9ce10;
+  -webkit-box-shadow: 1px 1px 12px #036397;
   box-shadow: 1px 4px 8px #18181771;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -544,13 +544,14 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  color: rgb(0, 0, 0);
 }
-.csk .cover {
+/* .csk .cover {
   background-color: #f5e48f;
   color: black;
 }
 .rcb .cover {
-  background-color: #2b2a29;
+  background-color: #036397;
   color: white;
 }
 .dc .cover {
@@ -584,7 +585,7 @@
 .srh .cover {
   background-color: #722424 ;
   color: white;
-}
+} */
 .book:hover .cover {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -611,7 +612,7 @@
 
 .btn-53 {
   -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: button;
+  
   background-color: blue;
   background-image: none;
   color: #fff;
@@ -619,11 +620,13 @@
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-size: 100%;
+  font-size: 20px;
   line-height: 1;
   margin: 0;
-  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
   padding: 0;
+  margin-left: 25px ;
+  margin-top: 10px;
+  font-weight: 200;
 }
 
 .btn-53:disabled {
@@ -645,15 +648,17 @@
 
 .btn-53 {
   border: 1px solid;
+  width: 100px;
   border-radius: 9px;
   box-sizing: border-box;
   display: block;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 15px;
   overflow: hidden;
-  padding: 1rem 1rem;
+  /* padding: 1rem 1rem; */
   position: relative;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  padding: 1rem 0.5rem;
 }
 
 .btn-53 .original {
