@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 import csk from "../components/images/csk.png"
 import rcb from "../components/images/rcb.png"
 import dc from "../components/images/dc.png"
@@ -14,6 +15,7 @@ const Teams = () => {
   return (
     <>
     <div className='container lg:m-6 mt-6 flex flex-wrap lg:gap-6 gap-6 justify-center sm:items-center'>
+    <Link to="/teams/chennai-super-kings">
     <div className="card csk">
     <div className="content">
       <div className="back">
@@ -43,13 +45,14 @@ const Teams = () => {
               {/* <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
             </div>
             <p className="card-footer text-md">
-              2022 &nbsp; | &nbsp; 2021
+              2023 &nbsp; | &nbsp; 2021 | &nbsp; 2018 | &nbsp; 2011 | &nbsp; 2010
             </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> </Link>
+  <Link to="/teams/royal-challengers-bangalore">
   <div className="card rcb">
     <div className="content">
       <div className="back">
@@ -79,13 +82,15 @@ const Teams = () => {
               {/* <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
             </div>
             <p className="card-footer text-md">
-              2022 &nbsp; | &nbsp; 2021
+            Ee Sala Cup Namde
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </Link>
+  <Link to="/teams/delhi-capitals">
   <div className="card dc">
     <div className="content">
       <div className="back">
@@ -115,13 +120,15 @@ const Teams = () => {
               {/* <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
             </div>
             <p className="card-footer text-md">
-              2022 &nbsp; | &nbsp; 2021
+             
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </Link>
+  <Link to="/teams/gujarat-titans">
   <div className="card gt">
     <div className="content">
       <div className="back">
@@ -151,13 +158,15 @@ const Teams = () => {
               {/* <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
             </div>
             <p className="card-footer text-md">
-              2022 &nbsp; | &nbsp; 2021
+              2022 &nbsp; 
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </Link>
+  <Link to="/teams/kolkata-knight-riders">
   <div className="card kkr">
     <div className="content">
       <div className="back">
@@ -187,13 +196,15 @@ const Teams = () => {
               {/* <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
             </div>
             <p className="card-footer text-md">
-              2022 &nbsp; | &nbsp; 2021
+              2014 &nbsp; | &nbsp; 2012
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </Link>
+  <Link to="/teams/lucknow-super-giants">
   <div className="card lsg">
     <div className="content">
       <div className="back">
@@ -223,13 +234,15 @@ const Teams = () => {
               {/* <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
             </div>
             <p className="card-footer text-md">
-              2022 &nbsp; | &nbsp; 2021
+              
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </Link>
+  <Link to="/teams/mumbai-indians">
   <div className="card mi">
     <div className="content">
       <div className="back">
@@ -259,13 +272,15 @@ const Teams = () => {
               {/* <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
             </div>
             <p className="card-footer text-md">
-              2022 &nbsp; | &nbsp; 2021
+              2020 &nbsp; | &nbsp; 2019  | &nbsp; 2017  | &nbsp; 2015  | &nbsp; 2013
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </Link>
+  <Link to="/teams/punjab-kings">
   <div className="card pk">
     <div className="content">
       <div className="back">
@@ -295,13 +310,15 @@ const Teams = () => {
               {/* <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
             </div>
             <p className="card-footer text-md">
-              2022 &nbsp; | &nbsp; 2021
+            
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </Link>
+  <Link to="/teams/rajasthan-royals">
   <div className="card rr">
     <div className="content">
       <div className="back">
@@ -331,13 +348,15 @@ const Teams = () => {
               {/* <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
             </div>
             <p className="card-footer text-md">
-              2022 &nbsp; | &nbsp; 2021
+              2018 &nbsp; 
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </Link>
+  <Link to="/teams/sunrisers-hyderabad">
   <div className="card srh">
     <div className="content">
       <div className="back">
@@ -367,13 +386,15 @@ const Teams = () => {
               {/* <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg> */}
             </div>
             <p className="card-footer text-md">
-              2022 &nbsp; | &nbsp; 2021
+              2016 &nbsp; 
             </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </Link>
+
   </div>
   </>
   );

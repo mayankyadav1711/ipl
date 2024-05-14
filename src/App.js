@@ -80,10 +80,10 @@ const App = () => {
                 <Route path="/stadiums" element={<Stadiums />} />
                 <Route path="/teams" element={<Teams />} />
                 <Route path="/customers" element={<Customers />} />
-                <Route path="/players" element={<Players />} />
+                <Route path="/teams/:teamname" element={<Players />} />
                 <Route path="/events" element={<Events />} />
                 <Route path="/upcomingEvents" element={<Upcoming />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route path="/teams/:teamname/:playercode" element={<Profile />} />
 
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />
