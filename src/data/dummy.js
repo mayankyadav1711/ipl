@@ -526,7 +526,11 @@ export const links = [
         icon: <IoMdContacts />,
       },
       {
-        name: "Players",
+        name: "Events",
+        icon: <RiContactsLine />,
+      },
+      {
+        name: "Upcoming Events",
         icon: <RiContactsLine />,
       },
     ],
