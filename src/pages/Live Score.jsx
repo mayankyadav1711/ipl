@@ -9,9 +9,11 @@ import { GiCricketBat } from "react-icons/gi";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { IoIosMore } from "react-icons/io";
-
+import Loader from "../components/loader"
 const LiveScore = () => {
   const [matches, setMatches] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
+
   const teamCaptains = {
     "Chennai Super Kings [CSK]": "https://documents.iplt20.com/ipl/IPLHeadshot2024/102.png",
     "Royal Challengers Bengaluru [RCB]": "https://documents.iplt20.com/ipl/IPLHeadshot2024/94.png",
@@ -43,6 +45,8 @@ const LiveScore = () => {
         const response = await fetch("http://localhost:5000/api/aa");
         const data = await response.json();
         setMatches(data);
+        setLoading(false); // Update loading state once data is fetched
+
       } catch (error) {
         console.error("Error fetching live score:", error);
       }
@@ -51,6 +55,10 @@ const LiveScore = () => {
     fetchLiveScore();
   }, []);
   return (
+    <> 
+    {loading ? (
+    <Loader/>
+   ) : (
     <div className="mt-24">
     <h1 className="text-center lg:text-6xl md:text-6xl text-4xl mb-24 font-medium">
       Live Score
@@ -138,7 +146,7 @@ const LiveScore = () => {
       ))}
     </div>
 
-    <div className="flex m-3 flex-wrap justify-center gap-6 items-center">
+    {/* <div className="flex m-3 flex-wrap justify-center gap-6 items-center">
          
     <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
               <button
@@ -186,25 +194,21 @@ const LiveScore = () => {
   </div>
             </div>
 
-            {/* Pie Charts start here  */}
             <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 grid justify-center items-center ">
             <div>
               <p className="text-gray-800 font-bold">Sixes Contribute</p>
             </div>
 
             <div className="w-40">
-              {/* <Pie
-                id="pie-chart"
-                data={ecomPieChartData}
-                legendVisiblity={false}
-                height="160px"
-              /> */}
+           
             </div>
           </div>
-        </div>
+        </div> */}
         
 
     </div>
+  )}
+        </>
   );
 };
 

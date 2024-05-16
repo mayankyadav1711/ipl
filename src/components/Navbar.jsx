@@ -10,7 +10,7 @@ const Navbar = () => {
   // const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
   return (
-    <div className="flex justify-center bg-gradient-to-r mb-4 from-blue-400 to-blue-900 p-2 relative">
+    <div className="flex justify-center bg-gradient-to-r mb-4 from-blue-400 to-blue-900 p-2 relative ">
 <img src={ipl} width={100}/>
  
     </div>

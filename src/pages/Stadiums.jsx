@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, {useEffect,useState} from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination, EffectCoverflow } from "swiper/modules";
 import stadium from "../components/images/motera.webp";
-
+import Loader from "../components/loader"
 const stadiumImages = [
   {
     image:
@@ -57,8 +57,30 @@ const stadiumImages = [
 ];
 const Stadiums = () => {
   const [currentImage, setCurrentImage] = useState(stadiumImages[0].image);
+  const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    const images = stadiumImages.map(stadium => stadium.image);
+    const promises = images.map(image => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = image;
+        img.onload = () => resolve();
+        img.onerror = () => reject();
+      });
+    });
+
+    Promise.all(promises)
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch(error => console.error('Error loading images', error));
+  }, []);
   return (
+    <>
+    {isLoading ? (
+       <Loader/>
+      ) : (
     <div className="relative w-full h-screen flex justify-center items-center">
       {/* Dynamic background */}
       <div
@@ -104,6 +126,8 @@ const Stadiums = () => {
         ))}
       </Swiper>
     </div>
+  )}
+    </>
   );
 };
 

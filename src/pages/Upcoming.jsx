@@ -3,6 +3,7 @@ import csk from "../components/images/csk.png";
 import rcb from "../components/images/rcb.png";
 import vs from "../components/images/versus.png";
 import trophy from "../components/images/trophy.svg";
+import Loader from "../components/loader"
 
 const teamLogos = {
     "Chennai Super Kings": "https://scores.iplt20.com/ipl/teamlogos/CSK.png",
@@ -27,6 +28,7 @@ const formatDateTime = (date, time) => {
 const Upcoming = () => {
     const [activeTab, setActiveTab] = useState('stats');
     const [matchResults, setMatchResults] = useState([]);
+    const [loading, setLoading] = useState(true); // Add loading state
 
     useEffect(() => {
         fetchMatchResults();
@@ -42,6 +44,8 @@ const Upcoming = () => {
             const matchesWithActiveTab = data.map(match => ({ ...match, activeTab: 'stats' }));
 
             setMatchResults(matchesWithActiveTab);
+            setLoading(false); // Update loading state once data is fetched
+
         } catch (error) {
             console.error('Error fetching match results:', error);
         }
@@ -56,7 +60,11 @@ const Upcoming = () => {
     };
 
     return (
-        <div className='container ml-8 mt-4 flex flex-wrap gap-6'>
+        <> 
+         {loading ? (
+         <Loader/>
+        ) : (
+        <div className='container ml-8 mt-20 flex flex-wrap gap-6'>
             {matchResults.map((match, index) => (
                 <div key={index} className="w-[25rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div className="sm:hidden">
@@ -110,6 +118,8 @@ const Upcoming = () => {
                 </div>
             ))}
         </div>
+    )}
+        </>
     );
 };
 

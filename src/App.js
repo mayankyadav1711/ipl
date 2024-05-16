@@ -31,7 +31,10 @@ const App = () => {
 
   return (
     <>
-    <Navbar />
+    
+    <div className="fixed top-0 w-full z-50">
+      <Navbar />
+    </div>
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
@@ -72,17 +75,17 @@ const App = () => {
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={(<Hero />)} />
-                <Route path="/Live Score" element={(<LiveScore />)} />
+                <Route path="/livescore" element={(<LiveScore />)} />
 
                 {/* pages  */}
                 <Route path="/stadiums" element={<Stadiums />} />
                 <Route path="/teams" element={<Teams />} />
                 <Route path="/customers" element={<Customers />} />
                 <Route path="/teams/:teamname" element={<Players />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/upcoming Events" element={<Upcoming />} />
+                <Route path="/results" element={<Events />} />
+                <Route path="/matches" element={<Upcoming />} />
                 <Route path="/teams/:teamname/:playercode" element={<Profile />} />
-                <Route path="/iplstandings" element={<IPLStandings />} />
+                <Route path="/pointtable" element={<IPLStandings />} />
 
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />

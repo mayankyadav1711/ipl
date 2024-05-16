@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import bg from "../components/images/motera.webp";
 import dhoni from "../components/images/dhoni.png";
-
+import Loader from "../components/loader"
 const Profile = () => {
   const [playerData, setPlayerData] = useState([]);
   const [backgroundImage, setBackgroundImage] = useState(bg);
+  const [playAudio, setPlayAudio] = useState(false);
+  const [loading, setLoading] = useState(true); // Add loading state
+
   useEffect(() => {
     const fetchPlayerData = async () => {
       try {
@@ -19,7 +22,11 @@ const Profile = () => {
         const data = await response.json();
         setPlayerData([data.player]); // Wrap player data in an array
         setBackgroundImage(getBackgroundImage(teamname));
+        setLoading(false); // Update loading state once data is fetched
 
+        if (teamname === "chennai-super-kings" && playercode === "1") {
+          setPlayAudio(true);
+        }
       } catch (error) {
         console.error("Error fetching player data:", error);
       }
@@ -31,18 +38,25 @@ const Profile = () => {
   const getBackgroundImage = (teamname) => {
     // Mapping object of team names and their background image URLs
     const teamBackgrounds = {
-      "chennai-super-kings": "https://4kwallpapers.com/images/walls/thumbs_3t/4938.png",
-      "mumbai-indians": "https://4kwallpapers.com/images/walls/thumbs_3t/4934.png",
-      "delhi-capitals": "https://i.pinimg.com/736x/33/1a/5a/331a5a63cf1b7f78f53433ae778e1ca3.jpg",
-      "sunrisers-hyderabad": "https://wallpapers.com/images/high/sunrisers-hyderabad-orange-and-white-logo-die68jcmuvtg8iir.webp",
-      "royal-challengers-bangalore": "https://4kwallpapers.com/images/walls/thumbs_3t/4937.png",
+      "chennai-super-kings":
+        "https://4kwallpapers.com/images/walls/thumbs_3t/4938.png",
+      "mumbai-indians":
+        "https://4kwallpapers.com/images/walls/thumbs_3t/4934.png",
+      "delhi-capitals":
+        "https://i.pinimg.com/736x/33/1a/5a/331a5a63cf1b7f78f53433ae778e1ca3.jpg",
+      "sunrisers-hyderabad":
+        "https://wallpapers.com/images/high/sunrisers-hyderabad-orange-and-white-logo-die68jcmuvtg8iir.webp",
+      "royal-challengers-bangalore":
+        "https://4kwallpapers.com/images/walls/thumbs_3t/4937.png",
       "gujarat-titans": "https://wallpapercave.com/wp/wp11073261.jpg",
-      "kolkata-knight-riders": "https://4kwallpapers.com/images/walls/thumbs_3t/4940.png",
-      "lucknow-super-giants": "https://imgk.timesnownews.com/media/Lucknow_Super_Giants_logo_1.png",
-      "punjab-kings": "https://i.pinimg.com/736x/58/6e/a0/586ea0e5338219f6d4cebda77d789932.jpg",
-      "rajasthan-royals": "https://wallpapers.com/images/high/rajasthan-royals-pink-background-pq1ac3zfrvq4wy4f.webp",
-
-     
+      "kolkata-knight-riders":
+        "https://4kwallpapers.com/images/walls/thumbs_3t/4940.png",
+      "lucknow-super-giants":
+        "https://imgk.timesnownews.com/media/Lucknow_Super_Giants_logo_1.png",
+      "punjab-kings":
+        "https://i.pinimg.com/736x/58/6e/a0/586ea0e5338219f6d4cebda77d789932.jpg",
+      "rajasthan-royals":
+        "https://wallpapers.com/images/high/rajasthan-royals-pink-background-pq1ac3zfrvq4wy4f.webp",
     };
 
     // Check if the team name exists in the mapping object
@@ -55,6 +69,10 @@ const Profile = () => {
   };
 
   return (
+    <> 
+    {loading ? (
+    <Loader/>
+   ) : (
     <main className="profile-page">
       <section className="relative block h-screen">
         <div
@@ -63,7 +81,7 @@ const Profile = () => {
         >
           <span
             id="blackOverlay"
-            className="w-full h-full absolute opacity-50 bg-black"
+            className="w-full h-full absolute opacity-20 bg-black"
           ></span>
         </div>
         <div
@@ -110,6 +128,7 @@ const Profile = () => {
                           alt={player.name}
                           src={player.image}
                           className="w-full h-full object-cover"
+                          
                         />
                         <div
                           style={{
@@ -152,25 +171,25 @@ const Profile = () => {
                   <h3 className="text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
                     {player.name}
                   </h3>
-                  <h5 className="font-semibold leading-normal mb-2 text-blueGray-700">
-                    {player.overview.specialization}
-                  </h5>
+                
 
                   <div className="w-full px-4 lg:order-1">
-  <div className="flex flex-col justify-start py-4 lg:pt-4 pt-8">
-    {player.overview.map((item, index) => (
-      <div key={index} className="mb-2 text-blueGray-600">
-        {Object.entries(item).map(([key, value]) => (
-          <React.Fragment key={key}>
-            <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
-            {key}: {value}
-            <br />
-          </React.Fragment>
-        ))}
-      </div>
-    ))}
-  </div>
-</div>
+                    <div className="flex flex-col justify-start py-4 lg:pt-4 pt-8">
+                      {player.overview.map((item, index) => (
+                        <div key={index} className="mb-2 text-blueGray-600">
+                          {Object.entries(item).map(([key, value]) => (
+                            <React.Fragment key={key}>
+                              <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
+                             <span style={{
+                              fontWeight: "bold",
+                             }}> {key} </span> : {value}
+                              <br />
+                            </React.Fragment>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
                   {/* Additional details */}
                 </div>
@@ -183,12 +202,25 @@ const Profile = () => {
                     </div>
                   </div>
                 </div>
+                {playAudio && (
+                  <div className="audio-player text-center">
+                    <audio autoPlay hidden>
+                      <source
+                        src="https://firebasestorage.googleapis.com/v0/b/studymate-c44e8.appspot.com/o/Thala%20Theme%20Song%20_%20Bole%20Jo%20Koyal%20Bago%20Mein%20(Lyrics)%20-%20Rawmats%20Chudi%20jo%20Khanke.mp3?alt=media&token=a385f17a-99c9-463c-9d7c-4c37e3a52d51"
+                        type="audio/mpeg"
+                      />
+                      Your browser does not support the audio element.
+                    </audio>
+                  </div>
+                )}
               </div>
             </div>
           ))}
         </div>
       </section>
     </main>
+  )}
+        </>
   );
 };
 

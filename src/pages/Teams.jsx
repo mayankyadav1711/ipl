@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import { Link } from 'react-router-dom'; 
 import csk from "../components/images/csk.png"
 import rcb from "../components/images/rcb.png"
@@ -10,11 +10,35 @@ import mi from "../components/images/mi.png"
 import pk from "../components/images/pk.png"
 import rr from "../components/images/rr.png"
 import srh from "../components/images/srh.png"
+import Loader from "../components/loader"
 
 const Teams = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const images = [csk, rcb, dc]; // Add all your image paths here
+    const promises = images.map(image => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = image;
+        img.onload = () => resolve();
+        img.onerror = () => reject();
+      });
+    });
+
+    Promise.all(promises)
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch(error => console.error('Error loading images', error));
+  }, []);
   return (
     <>
-    <div className='container lg:m-6 mt-6 flex flex-wrap lg:gap-6 gap-6 justify-center sm:items-center'>
+ 
+      {isLoading ? (
+         <Loader/>
+        ) : (
+    <div className='container lg:m-6 mt-6 flex flex-wrap lg:gap-6 gap-6 justify-center sm:items-center'
+    style={{marginTop:'120px'}}>
     <Link to="/teams/chennai-super-kings">
     <div className="card csk">
     <div className="content">
@@ -396,7 +420,8 @@ const Teams = () => {
   </Link>
 
   </div>
-  </>
+)}
+    </>
   );
 };
 

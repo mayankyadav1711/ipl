@@ -8,11 +8,12 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination, EffectCoverflow } from "swiper/modules";
 import stadium from "../components/images/motera.webp";
-import IPLStandings from "./IPLStandings";
 
 const Hero = () => {
   const [count, setCount] = useState(0);
+  const [count2, setCount2] = useState(0);
   const [counting, setCounting] = useState(true);
+  const [counting2, setCounting2] = useState(true);
 
   // Increment the counter quickly from 1 to 1000
   useEffect(() => {
@@ -20,16 +21,28 @@ const Hero = () => {
     const interval = setInterval(() => {
       setCount(i);
       i++;
-      if (i > 100) {
+      if (i > 17) {
         clearInterval(interval);
         setCounting(false);
       }
-    }, 10);
+    }, 1);
+    return () => clearInterval(interval);
+  }, []);
+  useEffect(() => {
+    let i = 1;
+    const interval = setInterval(() => {
+      setCount2(i);
+      i++;
+      if (i > 10) {
+        clearInterval(interval);
+        setCounting2(false);
+      }
+    }, 1);
     return () => clearInterval(interval);
   }, []);
   return (
     <>
-      <div className=" flex flex-col items-center justify-center gap-14 w-full h-full">
+      <div className=" flex flex-col items-center justify-center  w-full h-auto  mt-24">
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -38,20 +51,19 @@ const Hero = () => {
           coverflowEffect={{
             rotate: 50,
             stretch: 0,
-            // depth: 100,
-            // modifier: 1,
+       
           }}
           modules={[EffectCoverflow, Pagination]}
           pagination={{
             clickable: true,
           }}
-          className="mySwiper landingPageSwiper w-full overflow-hidden md:h-[500px] h-auto  flex md:flex-row flex-col items-center justify-center rounded-xl"
+          className="mySwiper landingPageSwiper  overflow-hidden  w-[800px] h-[330px] flex md:flex-row flex-col items-center justify-center rounded-xl"
         >
           return (
           <>
             <SwiperSlide className="w-full h-full">
               <img
-                src="https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2023/05/30/1209821-gt-vs-cskipl-final-2023-csk-win.jpg?im=Resize=(700,400)"
+                src="https://i.ibb.co/PTS0YBL/1209821-gt-vs-cskipl-final-2023-csk-win.webp"
                 alt="img"
                 className="w-full h-full object-cover object-center"
               />
@@ -79,26 +91,21 @@ const Hero = () => {
             </SwiperSlide>
             <SwiperSlide className="w-full h-full">
               <img
-                src={stadium}
+                src="https://i.ibb.co/WzzfwKG/7da783fb-1f86-47ee-afca-2bcc1079c0a1.jpg"
                 alt="img"
                 className="w-full h-full object-cover object-center"
               />
             </SwiperSlide>
-            <SwiperSlide className="w-full h-full">
-              <img
-                src={stadium}
-                alt="img"
-                className="w-full h-full object-cover object-center"
-              />
-            </SwiperSlide>
+          
           </>
           );
         </Swiper>
       </div>
       <div className="lg:flex grid mt-8 mx-4 lg:mx-8 justify-end items-center align-middle">
         <div className="container relative inline-block w-full h-32 lg:w-60 lg:h-48 bg-gradient-to-b from-blue-400 to-blue-900 rounded-xl shadow-lg overflow-hidden cursor-pointer">
-          <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex flex-col gap-8 items-center justify-center">
             <div className="text-white text-5xl font-bold">{count}</div>
+            <div className="text-white text-3xl font-bold">Seasons</div>
           </div>
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-white opacity-0 shine transition-all duration-1000 ease-in-out transform origin-top rotate-12"></div>
@@ -244,15 +251,16 @@ const Hero = () => {
         </div>
 
         <div className="container relative inline-block w-full h-32 lg:w-60 lg:h-48 bg-gradient-to-b from-blue-400 to-blue-900 rounded-xl shadow-lg overflow-hidden cursor-pointer">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-white text-5xl font-bold">{count}</div>
+          <div className="absolute inset-0 flex flex-col gap-8 items-center justify-center">
+            <div className="text-white text-5xl font-bold">{count2}</div>
+            <div className="text-white text-3xl font-bold">Teams</div>
           </div>
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-white opacity-0 shine transition-all duration-1000 ease-in-out transform origin-top rotate-12"></div>
           </div>
         </div>
       </div>
-<IPLStandings />
+
      
     </>
   );

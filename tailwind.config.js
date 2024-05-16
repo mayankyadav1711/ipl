@@ -44,5 +44,13 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-stroke-black': {
+          '-webkit-text-stroke': '1px black',
+        },
+      });
+    },
+  ],
 };

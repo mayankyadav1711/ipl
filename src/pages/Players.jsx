@@ -1,7 +1,51 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Loader from "../components/loader"
+const teamBackgrounds = {
+  "chennai-super-kings": {
+    bgImage: "https://4kwallpapers.com/images/walls/thumbs_3t/4938.png",
+    textColor: "black"
+  },
+  "mumbai-indians": {
+    bgImage: "https://4kwallpapers.com/images/walls/thumbs_3t/4934.png",
+    textColor: "white"
+  },
+  "delhi-capitals": {
+    bgImage: "https://i.pinimg.com/736x/33/1a/5a/331a5a63cf1b7f78f53433ae778e1ca3.jpg",
+    textColor: "white"
+  },
+  "sunrisers-hyderabad": {
+    bgImage: "https://wallpapers.com/images/high/sunrisers-hyderabad-orange-and-white-logo-die68jcmuvtg8iir.webp",
+    textColor: "black"
+  },
+  "royal-challengers-bangalore": {
+    bgImage: "https://4kwallpapers.com/images/walls/thumbs_3t/4937.png",
+    textColor: "white"
+  },
+  "gujarat-titans": {
+    bgImage: "https://wallpapercave.com/wp/wp11073261.jpg",
+    textColor: "white"
+  },
+  "kolkata-knight-riders": {
+    bgImage: "https://4kwallpapers.com/images/walls/thumbs_3t/4940.png",
+    textColor: "white"
+  },
+  "lucknow-super-giants": {
+    bgImage: "https://imgk.timesnownews.com/media/Lucknow_Super_Giants_logo_1.png",
+    textColor: "black"
+  },
+  "punjab-kings": {
+    bgImage: "https://i.pinimg.com/736x/58/6e/a0/586ea0e5338219f6d4cebda77d789932.jpg",
+    textColor: "white"
+  },
+  "rajasthan-royals": {
+    bgImage: "https://wallpapers.com/images/high/rajasthan-royals-pink-background-pq1ac3zfrvq4wy4f.webp",
+    textColor: "black"
+  }
+};
 const Players = () => {
   const [players, setPlayers] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   const teamname = window.location.pathname.split("/").pop(); // Extract teamname from URL path
 
@@ -16,6 +60,8 @@ const Players = () => {
         }
         const data = await response.json();
         setPlayers(data.players);
+        setLoading(false); // Update loading state once data is fetched
+
       } catch (error) {
         console.error("Error fetching players:", error);
       }
@@ -34,9 +80,13 @@ const Players = () => {
     player.role.includes("All-rounder")
   );
   const bowlers = players.filter((player) => player.role.includes("Bowler"));
-
+  const { bgImage, textColor } = teamBackgrounds[teamname] || {};
   return (
-    <div className="container lg:m-6 mt-6">
+    <> 
+    {loading ? (
+    <Loader/>
+   ) : (
+    <div className="container lg:m-6 mt-6 ">
       <div className="flex flex-col gap-6">
         <h2 className="text-2xl font-bold mb-4">Players</h2>
 
@@ -46,10 +96,17 @@ const Players = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {batters.map((player, index) => (
               <Link to={`/teams/${teamname}/${player.playercode}`}>
-                <div key={index} className={`book justify-center text-center `}>
+                <div key={index} className={`book justify-center text-center `}
+                 style={{
+                    backgroundImage: `url(${bgImage})`,
+                    backgroundSize: 'cover',
+                
+                    backgroundRepeat: 'no-repeat',
+                    color: textColor
+                  }}>
                   <div className="inline-block">
                     {/* <p className="block max-w-[150px]">{player.name}</p> */}
-                    <svg
+                    {/* <svg
                       width={150}
                       xmlns="http://www.w3.org/2000/svg"
                       fill-rule="evenodd"
@@ -79,12 +136,19 @@ const Players = () => {
                       />
                       <path fill="none" d="M0 0h6.827v6.827H0z" />
                       <path fill="none" d="M.853.853h5.12v5.12H.853z" />
-                    </svg>
+                    </svg> */}
                     <p className="block max-w-[150px] ml-2 text-center">
                       {player.role}
                     </p>
                   </div>
-                  <div className="cover flex flex-col">
+                  <div className="cover flex flex-col"
+                   style={{
+                    backgroundImage: `url(${bgImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    color: textColor
+                  }}>
                     <img
                       src={player.image}
                       className="w-[100%] drop-shadow-2xl"
@@ -103,10 +167,17 @@ const Players = () => {
           <h3 className="text-xl font-bold mb-2">All-rounders</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {allRounders.map((player, index) => (
-              <div key={index} className={`book justify-center text-center `}>
+              <div key={index} className={`book justify-center text-center `}
+               style={{
+                    backgroundImage: `url(${bgImage})`,
+                    backgroundSize: 'cover',
+            
+                    backgroundRepeat: 'no-repeat',
+                    color: textColor
+                  }}>
                 <div className="inline-block">
                   {/* <p className="block max-w-[150px]">{player.name}</p> */}
-                  <svg
+                  {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     id="cricket"
@@ -136,10 +207,17 @@ const Players = () => {
                       d="M7.91,7.65h0a1.75,1.75,0,0,0,2-1.15h0"
                     ></path>
                     <path d="M20,20.3l-5-8.66L12.46,7.22A2.19,2.19,0,0,0,10.7,6.13a1.18,1.18,0,0,1-.94-.58L6.71.26A.51.51,0,0,0,6.4,0,.5.5,0,0,0,6,.07l-1.73,1a.5.5,0,0,0-.18.68L7.16,7a1.17,1.17,0,0,1,0,1.11,2.23,2.23,0,0,0,.06,2.06l2.55,4.42,5,8.66a1.5,1.5,0,0,0,2.05.54l2.59-1.5a1.49,1.49,0,0,0,.55-2ZM5.23,1.69l.86-.5L8.89,6a2.15,2.15,0,0,0,.42.5,1.23,1.23,0,0,1-1.06.61A2.12,2.12,0,0,0,8,6.55Zm2.9,8A1.18,1.18,0,0,1,8,9.13a1.15,1.15,0,0,1,.12-.53,2.12,2.12,0,0,0,.15-.42h0A2.23,2.23,0,0,0,10.18,7a2.06,2.06,0,0,0,.46.08,1.19,1.19,0,0,1,1,.59L14,11.84l-1.21,1.53a.52.52,0,0,1-.32.19l-1.93.28ZM19.19,21.17a.49.49,0,0,1-.23.3h0L16.36,23A.48.48,0,0,1,16,23a.5.5,0,0,1-.3-.23l-4.63-8,1.55-.22a1.52,1.52,0,0,0,1-.55l1-1.22,4.63,8A.49.49,0,0,1,19.19,21.17Zm-9.7-3.44h0a3.57,3.57,0,0,0-4.65,0,3.49,3.49,0,0,0,0,5.21h0A3.49,3.49,0,0,0,9.5,17.73Zm-4.33,4.1v0l0-.07a2.42,2.42,0,0,1-.19-.33l-.06-.14a2.48,2.48,0,0,1-.1-.32s0-.09,0-.14a2.3,2.3,0,0,1,0-1s0-.09,0-.14a2.47,2.47,0,0,1,.11-.33l.06-.13a2.43,2.43,0,0,1,.21-.36l0,0,0,0a2.51,2.51,0,0,1,0,3Zm3.25.65a2.57,2.57,0,0,1-2.5,0,3.45,3.45,0,0,0,0-4.31,2.45,2.45,0,0,1,2.51,0,3.45,3.45,0,0,0,0,4.31Zm1.2-2.63a2.3,2.3,0,0,1,0,1s0,.09,0,.14a2.46,2.46,0,0,1-.11.33l-.06.13a2.42,2.42,0,0,1-.21.36l0,0,0,0a2.51,2.51,0,0,1,0-3v0l0,.07a2.41,2.41,0,0,1,.19.33l.06.14a2.47,2.47,0,0,1,.1.32S9.6,19.81,9.61,19.86Z"></path>
-                  </svg>
+                  </svg> */}
                   <p className="block max-w-[150px] ml-2">{player.role}</p>
                 </div>
-                <div className="cover flex flex-col">
+                <div className="cover flex flex-col"
+                 style={{
+                    backgroundImage: `url(${bgImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    color: textColor
+                  }}>
                   <img
                     src={player.image}
                     className="w-[100%] drop-shadow-2xl"
@@ -157,10 +235,17 @@ const Players = () => {
           <h3 className="text-xl font-bold mb-2">Bowlers</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {bowlers.map((player, index) => (
-              <div key={index} className={`book justify-center text-center `}>
+              <div key={index} className={`book justify-center text-center `}
+               style={{
+                    backgroundImage: `url(${bgImage})`,
+                    backgroundSize: 'cover',
+               
+                    backgroundRepeat: 'no-repeat',
+                    color: textColor
+                  }}>
                 <div className="inline-block">
                   {/* <p className="block max-w-[150px]">{player.name}</p> */}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                  {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
                     <circle cx="25" cy="25" r="24" fill="#e42f26" />
                     <path
                       fill="#bf2026"
@@ -822,10 +907,17 @@ const Players = () => {
                       ry="8.3"
                       transform="rotate(-45.001 16.444 16.908)"
                     />
-                  </svg>
+                  </svg> */}
                   <p className="block max-w-[150px] ml-2">{player.role}</p>
                 </div>
-                <div className="cover flex flex-col">
+                <div className="cover flex flex-col"
+                 style={{
+                    backgroundImage: `url(${bgImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    color: textColor
+                  }}>
                   <img
                     src={player.image}
                     className="w-[100%] drop-shadow-2xl"
@@ -839,6 +931,8 @@ const Players = () => {
         </div>
       </div>
     </div>
+  )}
+        </>
   );
 };
 
