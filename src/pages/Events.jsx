@@ -76,14 +76,14 @@ const Events = () => {
                     <div className="border-t border-gray-200 dark:border-gray-600">
                         <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${match.activeTab === 'stats' ? 'block' : 'hidden'}`} id={`stats-${index}`} role="tabpanel" aria-labelledby={`stats-tab-${index}`}>
                             <div className="flex justify-between items-center mb-6">
-                                <div className="flex flex-col items-center">
-                                    <img src={teamLogos[match.homeTeam.name]} alt="Home Team Logo" className="w-20 mb-2" />
-                                    <p className="text-xl font-semibold">{match.homeTeam.name}</p>
+                                <div className="flex flex-col items-center h-40">
+                                    <img src={teamLogos[match.homeTeam.name]} alt="Home Team Logo" className="w-20 mb-2 h-20" />
+                                    <p className="text-xl font-semibold text-center w-36">{match.homeTeam.name}</p>
                                 </div>
                                 <img src={vs} alt='v/s' className="w-10" />
-                                <div className="flex flex-col items-center">
-                                    <img src={teamLogos[match.awayTeam.name]} alt="Away Team Logo" className="w-12 mb-2" />
-                                    <p className="text-xl font-semibold">{match.awayTeam.name}</p>
+                                <div className="flex flex-col items-center h-40">
+                                    <img src={teamLogos[match.awayTeam.name]} alt="Away Team Logo" className="w-20 mb-2 h-20" />
+                                    <p className="text-xl font-semibold text-center w-36">{match.awayTeam.name}</p>
                                 </div>
                             </div>
                             <div>
@@ -105,8 +105,8 @@ const Events = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className={`items-center justify-center flex p-4 bg-white rounded-lg dark:bg-gray-800 ${match.activeTab === 'faq' ? 'block' : 'hidden'}`} id={`faq-${index}`} role="tabpanel" aria-labelledby={`faq-tab-${index}`}>
-                            <img src={trophy} alt='winner' className='w-40' />
+                        <div className={`flex mt-10 items-center justify-center align-middle text-center p-4 bg-white rounded-lg dark:bg-gray-800 ${match.activeTab === 'faq' ? 'block' : 'hidden'}`} id={`faq-${index}`} role="tabpanel" aria-labelledby={`faq-tab-${index}`}>
+                            <img src={trophy} alt='winner' className='w-40 justify-center items-center align-middle' />
                             <h1 className='font-bold text-xl'>{match.result}</h1>
                         </div>
                     </div>

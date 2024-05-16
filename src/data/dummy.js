@@ -6,6 +6,12 @@ import {
   AiOutlineBarChart,
   AiOutlineStock,
 } from "react-icons/ai";
+import { MdScore } from "react-icons/md";
+import { RiTeamFill } from "react-icons/ri";
+import { GiGroundbreaker } from "react-icons/gi";
+import { MdEmojiEvents } from "react-icons/md";
+import { MdEventNote } from "react-icons/md";
+
 import {
   FiShoppingBag,
   FiEdit,
@@ -515,23 +521,23 @@ export const links = [
     links: [
       {
         name: "Live Score",
-        icon: <FiShoppingBag />,
+        icon: <MdScore />,
       },
       {
         name: "Teams",
-        icon: <AiOutlineShoppingCart />,
+        icon: <RiTeamFill />,
       },
       {
         name: "Stadiums",
-        icon: <IoMdContacts />,
+        icon: <GiGroundbreaker />,
       },
       {
         name: "Events",
-        icon: <RiContactsLine />,
+        icon: <MdEmojiEvents />,
       },
       {
         name: "Upcoming Events",
-        icon: <RiContactsLine />,
+        icon: <MdEventNote />,
       },
     ],
   },

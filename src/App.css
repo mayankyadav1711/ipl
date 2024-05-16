@@ -15,7 +15,7 @@
 
 .e-dlg-center-center,
 .e-quick-popup-wrapper.e-device {
-  z-index: 1000000 !important;
+  z-index: 100 !important;
 }
 
 ::-webkit-scrollbar {
@@ -126,7 +126,11 @@
 }
 .dc .front,
 .back {
-  background: linear-gradient(to right, #003668, #f62e2e); /* Delhi Capitals gradient colors *//* dc gradient colors */
+  background: linear-gradient(
+    to right,
+    #003668,
+    #f62e2e
+  ); /* Delhi Capitals gradient colors */ /* dc gradient colors */
   color: white; /* Text color */
 }
 .dc .content {
@@ -134,15 +138,23 @@
 }
 .gt .front,
 .back {
-  background: linear-gradient(to right,#0d1a30, #0b7ebc ); /* Gujarat Titans gradient colors */
+  background: linear-gradient(
+    to right,
+    #0d1a30,
+    #0b7ebc
+  ); /* Gujarat Titans gradient colors */
   color: white; /* Text color */
 }
 .gt .content {
-  box-shadow: 0px 0px 10px 1px #003DA5;
+  box-shadow: 0px 0px 10px 1px #003da5;
 }
 .kkr .front,
 .back {
-  background: linear-gradient(to right,#28204a, #e1a01d ); /* Gujarat Titans gradient colors */
+  background: linear-gradient(
+    to right,
+    #28204a,
+    #e1a01d
+  ); /* Gujarat Titans gradient colors */
   color: white; /* Text color */
 }
 .kkr .content {
@@ -150,7 +162,11 @@
 }
 .lsg .front,
 .back {
-  background: linear-gradient(to right,#0248bc, #ffffff ); /* Gujarat Titans gradient colors */
+  background: linear-gradient(
+    to right,
+    #0248bc,
+    #ffffff
+  ); /* Gujarat Titans gradient colors */
   color: white; /* Text color */
 }
 .lsg .content {
@@ -158,7 +174,11 @@
 }
 .mi .front,
 .back {
-  background: linear-gradient(to right,#133166, #2d6ab1 ); /* Gujarat Titans gradient colors */
+  background: linear-gradient(
+    to right,
+    #133166,
+    #2d6ab1
+  ); /* Gujarat Titans gradient colors */
   color: white; /* Text color */
 }
 .mi .content {
@@ -166,7 +186,11 @@
 }
 .pk .front,
 .back {
-  background: linear-gradient(to right,#d71920, #283665 ); /* Gujarat Titans gradient colors */
+  background: linear-gradient(
+    to right,
+    #d71920,
+    #283665
+  ); /* Gujarat Titans gradient colors */
   color: white; /* Text color */
 }
 .pk .content {
@@ -174,7 +198,11 @@
 }
 .rr .front,
 .back {
-  background: linear-gradient(to right,#d21470, #042857 ); /* Gujarat Titans gradient colors */
+  background: linear-gradient(
+    to right,
+    #d21470,
+    #042857
+  ); /* Gujarat Titans gradient colors */
   color: white; /* Text color */
 }
 .rr .content {
@@ -182,7 +210,11 @@
 }
 .srh .front,
 .back {
-  background: linear-gradient(to right,#f26522, #722424 ); /* Gujarat Titans gradient colors */
+  background: linear-gradient(
+    to right,
+    #f26522,
+    #722424
+  ); /* Gujarat Titans gradient colors */
   color: white; /* Text color */
 }
 .srh .content {
@@ -235,7 +267,7 @@
   background: #2b2a29;
 }
 .dc .back-content {
-  background: #004C93;
+  background: #004c93;
 }
 .gt .back-content {
   background: #0d1a30;
@@ -441,22 +473,22 @@
   background-color: #1e3660;
 }
 .kkr #bottom {
-  background-color: #d69410 ;
+  background-color: #d69410;
 }
 .lsg #bottom {
-  background-color: #0248bc ;
+  background-color: #0248bc;
 }
 .mi #bottom {
-  background-color: #133166 ;
+  background-color: #133166;
 }
 .pk #bottom {
-  background-color: #d71920 ;
+  background-color: #d71920;
 }
 .rr #bottom {
-  background-color: #d21470 ;
+  background-color: #d21470;
 }
 .srh #bottom {
-  background-color: #f26522 ;
+  background-color: #f26522;
 }
 #right {
   background-color: #ff2233;
@@ -466,16 +498,16 @@
   height: 30px;
   animation-delay: -1800ms;
 }
-.kkr #right{
+.kkr #right {
   background-color: #1e1546;
 }
-.lsg #right{
+.lsg #right {
   background-color: #0248bc;
 }
-.mi #right{
+.mi #right {
   background-color: #4486d0;
 }
-.srh #right{
+.srh #right {
   background-color: #f26522;
 }
 
@@ -493,14 +525,13 @@
   }
 }
 
-
 /* Players */
 .book {
   position: relative;
   border-radius: 10px;
   width: 220px;
   height: 300px;
-  
+
   -webkit-box-shadow: 1px 1px 12px #0363979b;
   box-shadow: 1px 1px 12px #036397a0;
   -webkit-transform: preserve-3d;
@@ -599,7 +630,6 @@
   font-weight: bolder;
 }
 
-
 .btn-53,
 .btn-53 *,
 .btn-53 :after,
@@ -612,7 +642,7 @@
 
 .btn-53 {
   -webkit-tap-highlight-color: transparent;
-  
+
   background-color: blue;
   background-image: none;
   color: #fff;
@@ -624,7 +654,7 @@
   line-height: 1;
   margin: 0;
   padding: 0;
-  margin-left: 25px ;
+  margin-left: 25px;
   margin-top: 10px;
   font-weight: 200;
 }
@@ -714,7 +744,6 @@
   transition-delay: 0.5s;
 }
 
-
 /* Points Table  */
 .parent {
   width: 290px;
@@ -728,16 +757,120 @@
   background: linear-gradient(135deg, rgb(0, 98, 255) 0%, rgb(8, 59, 226) 100%);
   transition: all 0.5s ease-in-out;
   transform-style: preserve-3d;
-  box-shadow: rgba(5, 18, 71, 0) 40px 50px 25px -40px, rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+  box-shadow: rgba(5, 18, 71, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
 }
+.csk .parentcard {
+  background: linear-gradient(
+    135deg,
+    #f9e22a,
+    rgb(226, 204, 8) 100%
+  );
 
+  box-shadow: rgba(70, 71, 5, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+}
+.rr .parentcard {
+  background: linear-gradient(
+    135deg,
+    #ff559a,
+    #303491 100%
+  );
+
+  box-shadow: rgba(70, 71, 5, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+}
+.kkr .parentcard {
+  background: linear-gradient(
+    135deg,
+    #463573,
+    #946dff 100%
+  );
+
+  box-shadow: rgba(70, 71, 5, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+}
+.srh .parentcard {
+  background: linear-gradient(
+    135deg,
+    #ff6026,
+    #41323b 100%
+  );
+
+  box-shadow: rgba(70, 71, 5, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+}
+.dc .parentcard {
+  background: linear-gradient(
+    135deg,
+    #ff5265 50%,
+    #243d8d 
+  );
+
+  box-shadow: rgba(70, 71, 5, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+}
+.rcb .parentcard {
+  background: linear-gradient(
+    135deg,
+    #26324c 50%,
+    #b93341 
+  );
+
+  box-shadow: rgba(70, 71, 5, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+}
+.lsg .parentcard {
+  background: linear-gradient(
+    135deg,
+    #9ae0e3 ,
+    #ffa582 100%
+  );
+
+  box-shadow: rgba(70, 71, 5, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+}
+.gt .parentcard {
+  background: linear-gradient(
+    135deg,
+    #424f67 ,
+    #fcc14d 100%
+  );
+
+  box-shadow: rgba(70, 71, 5, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+}
+.pbks .parentcard {
+  background: linear-gradient(
+    135deg,
+    #ff4946 ,
+    #bb721c 100%
+  );
+
+  box-shadow: rgba(70, 71, 5, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+}
+.mi .parentcard {
+  background: linear-gradient(
+    135deg,
+    #0994d8 ,
+    #0a335b 100%
+  );
+
+  box-shadow: rgba(70, 71, 5, 0) 40px 50px 25px -40px,
+    rgba(5, 9, 71, 0.2) 0px 25px 25px -5px;
+}
 .glass {
   transform-style: preserve-3d;
   position: absolute;
   inset: 8px;
   border-radius: 55px;
   border-top-right-radius: 100%;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.349) 0%, rgba(255, 255, 255, 0.815) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.349) 0%,
+    rgba(255, 255, 255, 0.815) 100%
+  );
   /* -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px); */
   transform: translate3d(0px, 0px, 25px);
@@ -753,10 +886,10 @@
 
 .parentcontent .title {
   display: block;
-  color: #100089;
+  color: #000;
   font-weight: 900;
   font-size: 28px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .parentcontent .text {
@@ -765,7 +898,9 @@
   font-size: 15px;
   margin-top: 20px;
 }
-
+.csk .parentcontent .text {
+  color: rgba(0, 0, 0, 0.765);
+}
 .bottom {
   padding: 10px 12px;
   transform-style: preserve-3d;
@@ -810,7 +945,8 @@
   display: flex;
   gap: 16px;
   transform-style: preserve-3d;
-  color: rgb(2, 2, 160);
+  color: black;
+  font-weight: 600;
 }
 
 .bottom .social-buttons-container .social-button {
@@ -857,6 +993,9 @@
 .bottom .social-buttons-container .social-button:active .svg {
   fill: black;
 }
+.white-icon {
+  color: white;
+}
 
 .logo {
   position: absolute;
@@ -876,6 +1015,47 @@
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   background: rgba(42, 167, 251, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.csk .logo .parentcircle {
+  background: rgba(220, 251, 42, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.rr .logo .parentcircle {
+  background: hsla(336, 100%, 67%, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.kkr .logo .parentcircle {
+  background: hsla(256, 37%, 33%, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.srh .logo .parentcircle {
+  background: hsla(16, 100%, 57%, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.dc .logo .parentcircle {
+  background: hsl(353, 100%, 66% , 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.rcb .logo .parentcircle {
+  background: hsl(221, 33%, 22%, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.lsg .logo .parentcircle {
+  background: hsl(182, 57%, 75%, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.gt .logo .parentcircle {
+  background: hsl(219, 22%, 33%, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.pbks .logo .parentcircle {
+  background: hsl(1, 100%, 64%,0.2);
+  transition: all 0.5s ease-in-out;
+}
+.mi .logo .parentcircle {
+  background: hsl(210, 80%, 20%, 0.2);
   transition: all 0.5s ease-in-out;
 }
 
@@ -929,7 +1109,8 @@
 
 .parent:hover .parentcard {
   transform: rotate3d(1, 1, 0, 30deg);
-  box-shadow: rgba(5, 21, 71, 0.3) 30px 50px 25px -40px, rgba(12, 5, 71, 0.1) 0px 25px 30px 0px;
+  box-shadow: rgba(5, 21, 71, 0.3) 30px 50px 25px -40px,
+    rgba(12, 5, 71, 0.1) 0px 25px 30px 0px;
 }
 
 .parent:hover .parentcard .bottom .social-buttons-container .social-button {
