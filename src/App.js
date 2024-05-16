@@ -30,6 +30,8 @@ const App = () => {
   }, []);
 
   return (
+    <>
+    <Navbar />
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
@@ -49,15 +51,13 @@ const App = () => {
 
             </TooltipComponent>
           </div>
-          {activeMenu ? (
-            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg lg:bg-main-bg bg-transparent flex justify-center align-middle items-center">
+        
+            <div className=" fixed sidebar dark:bg-secondary-dark-bg lg:bg-main-bg bg-transparent flex justify-center align-middle items-center">
               <Sidebar />
             </div>
-          ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg flex justify-center align-middle items-center">
-              <Sidebar />
-            </div>
-          )}
+      
+            
+        
           <div
             className={
               activeMenu
@@ -65,9 +65,7 @@ const App = () => {
                 : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
             }
           >
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
-              <Navbar />
-            </div>
+            
             <div>
               {themeSettings && (<ThemeSettings />)}
 
@@ -109,6 +107,7 @@ const App = () => {
         </div>
       </BrowserRouter>
     </div>
+    </>
   );
 };
 

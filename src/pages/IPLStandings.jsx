@@ -1,5 +1,14 @@
 import React from 'react';
+import kkrLogo from "../components/images/kkr.png";
+import rrLogo from "../components/images/rr.png";
 import cskLogo from "../components/images/csk.png";
+import srhLogo from "../components/images/srh.png";
+import dcLogo from "../components/images/dc.png";
+import rcbLogo from "../components/images/rcb.png";
+import lsgLogo from "../components/images/lsg.png";
+import gtLogo from "../components/images/gt.png";
+import pbksLogo from "../components/images/pk.png";
+import miLogo from "../components/images/mi.png"
 
 const IPLStandings = () => {
   // Sample team data
@@ -85,7 +94,18 @@ const IPLStandings = () => {
       "points": "8"
     }
   ];
-
+  const teamLogos = {
+    "KKR": kkrLogo,
+    "RR": rrLogo,
+    "CSK": cskLogo,
+    "SRH" :srhLogo,
+    "DC" :dcLogo,
+    "RCB" :rcbLogo,
+    "LSG" :lsgLogo,
+    "GT" :gtLogo,
+    "PBKS" :pbksLogo,
+    "MI" :miLogo,
+  };
   // Function to generate class name based on team name
   const getTeamClass = (teamName) => {
     return teamName.toLowerCase(); // Example: 'CSK' will become 'csk'
@@ -104,8 +124,8 @@ const IPLStandings = () => {
                 <h1 className='text-2xl font-bold text-white'>{team.position}</h1>
                 </span>
                 {/* Use team logo image */}
-                <img src={cskLogo} alt={`${team.team} Logo`} />
-              </div>
+                <img src={teamLogos[team.team]} alt={`${team.team} Logo`} />
+                              </div>
               <div className="glass"></div>
               <div className="parentcontent flex text-center justify-center">
                 <span className="title flex justify-center mt-6 text-5xl">{team.team}</span>
