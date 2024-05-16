@@ -46,10 +46,10 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => setThemeSettings(true)}
-                style={{ background: currentColor, borderRadius: '50%' }}
-                className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
+              
+                className=""
               >
-                <FiSettings />
+                {/* <FiSettings /> */}
               </button>
 
             </TooltipComponent>

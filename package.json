@@ -1,5 +1,6 @@
 {
-  "name": "shoppy-dashboard",
+  "name": "ipl-dashboard",
+  "author":"Mayank and Divya",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
