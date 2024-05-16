@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Loader from "../components/loader"
+import Loader from "../components/Loader"
 const teamBackgrounds = {
   "chennai-super-kings": {
     bgImage: "https://4kwallpapers.com/images/walls/thumbs_3t/4938.png",

@@ -9,7 +9,7 @@ import lsgLogo from "../components/images/lsg.png";
 import gtLogo from "../components/images/gt.png";
 import pbksLogo from "../components/images/pk.png";
 import miLogo from "../components/images/mi.png"
-import Loader from "../components/loader"
+import Loader from "../components/Loader"
 const IPLStandings = () => {
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state

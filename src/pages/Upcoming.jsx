@@ -3,7 +3,7 @@ import csk from "../components/images/csk.png";
 import rcb from "../components/images/rcb.png";
 import vs from "../components/images/versus.png";
 import trophy from "../components/images/trophy.svg";
-import Loader from "../components/loader"
+import Loader from "../components/Loader"
 
 const teamLogos = {
     "Chennai Super Kings": "https://scores.iplt20.com/ipl/teamlogos/CSK.png",

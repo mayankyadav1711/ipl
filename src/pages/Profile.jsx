@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import bg from "../components/images/motera.webp";
 import dhoni from "../components/images/dhoni.png";
-import Loader from "../components/loader"
+import Loader from "../components/Loader"
 const Profile = () => {
   const [playerData, setPlayerData] = useState([]);
   const [backgroundImage, setBackgroundImage] = useState(bg);

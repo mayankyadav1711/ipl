@@ -9,7 +9,7 @@ import { GiCricketBat } from "react-icons/gi";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { IoIosMore } from "react-icons/io";
-import Loader from "../components/loader"
+import Loader from "../components/Loader"
 const LiveScore = () => {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state

@@ -2,10 +2,33 @@ import React from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import { BsCheck } from "react-icons/bs";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-
-import { themeColors } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
-
+const themeColors = [
+  {
+    name: "blue-theme",
+    color: "#1A97F5",
+  },
+  {
+    name: "green-theme",
+    color: "#03C9D7",
+  },
+  {
+    name: "purple-theme",
+    color: "#7352FF",
+  },
+  {
+    name: "red-theme",
+    color: "#FF5C8E",
+  },
+  {
+    name: "indigo-theme",
+    color: "#1E4DB7",
+  },
+  {
+    color: "#FB9678",
+    name: "orange-theme",
+  },
+];
 const ThemeSettings = () => {
   const { setColor, setMode, currentMode, currentColor, setThemeSettings } =
     useStateContext();
