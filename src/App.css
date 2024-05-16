@@ -532,8 +532,8 @@
   width: 220px;
   height: 300px;
 
-  -webkit-box-shadow: 1px 1px 12px #0363979b;
-  box-shadow: 1px 1px 12px #036397a0;
+  -webkit-box-shadow: 1px 1px 12px #0707079b;
+  box-shadow: 1px 1px 12px #000a0fa0;
   -webkit-transform: preserve-3d;
   -ms-transform: preserve-3d;
   transform: preserve-3d;
