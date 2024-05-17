@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
-import csk from "../components/images/csk.png";
-import dhoni from "../components/images/msdhoni.png";
-import kohli from "../components/images/kohli.png";
-import rcb from "../components/images/rcb.png";
 import { FaRunning } from "react-icons/fa";
 import { MdSportsCricket } from "react-icons/md";
 import { GiCricketBat } from "react-icons/gi";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { IoIosMore } from "react-icons/io";
-import Loader from "../components/Loader";
 import { IoIosRefresh } from "react-icons/io";
+import Loader from "../components/Loader";
+import { GrStatusGood } from "react-icons/gr";
 
 const LiveScore = () => {
   const [matches, setMatches] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
 
   const teamCaptains = {
     "Chennai Super Kings [CSK]":
@@ -56,13 +53,14 @@ const LiveScore = () => {
     "Delhi Capitals [DC]": "https://scores.iplt20.com/ipl/teamlogos/DC.png",
     "Punjab Kings [PBKS]": "https://scores.iplt20.com/ipl/teamlogos/PBKS.png",
   };
+
   useEffect(() => {
     const fetchLiveScore = async () => {
       try {
         const response = await fetch("http://localhost:5000/api/aa");
         const data = await response.json();
         setMatches(data);
-        setLoading(false); // Update loading state once data is fetched
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching live score:", error);
       }
@@ -77,20 +75,16 @@ const LiveScore = () => {
 
     let oversPlayed;
 
-    // Check if the oversString includes parentheses
     if (oversString.includes("(")) {
-      // Extract the overs value from within the parentheses
       const match = oversString.match(/\((\d+(\.\d+)?)\)/);
       oversPlayed = match ? parseFloat(match[1]) : NaN;
     } else {
-      // If no parentheses, assume the oversString is the overs value
       oversPlayed = parseFloat(oversString);
     }
 
     if (isNaN(oversPlayed) || oversPlayed === 0 || isNaN(runsScored)) {
       return "N/A";
     }
-    console.log(runsScored, oversPlayed);
     const runRate = runsScored / oversPlayed;
     return runRate.toFixed(2);
   };
@@ -101,13 +95,10 @@ const LiveScore = () => {
 
     let oversPlayed;
 
-    // Check if the oversString includes parentheses
     if (oversString.includes("(")) {
-      // Extract the overs value from within the parentheses
       const match = oversString.match(/\((\d+(\.\d+)?)\)/);
       oversPlayed = match ? parseFloat(match[1]) : NaN;
     } else {
-      // If no parentheses, assume the oversString is the overs value
       oversPlayed = parseFloat(oversString);
     }
 
@@ -126,8 +117,8 @@ const LiveScore = () => {
   };
 
   const handleRefresh = async () => {
-    setLoading(true); // Set loading state to true
-  
+    setLoading(true);
+
     try {
       const response = await fetch("http://localhost:5000/api/aa");
       const data = await response.json();
@@ -135,171 +126,153 @@ const LiveScore = () => {
     } catch (error) {
       console.error("Error fetching live score:", error);
     } finally {
-      setLoading(false); // Set loading state back to false
+      setLoading(false);
     }
   };
+
   return (
     <>
       {loading ? (
         <Loader />
       ) : (
-
-
         <div className="mt-48">
           <div className="flex justify-center mb-4">
-  <button
-    type="button"
-    onClick={handleRefresh}
-    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center"
-  >
-    <IoIosRefresh className="mr-2" />
-    Refresh
-  </button>
-</div>
-          <div className="lg:flex justify-center grid gap-20 md:gap-0">
-            {matches.map((match) => (
-              <div
-                key={match.id}
-                className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg lg:h-auto h-40 rounded-xl  lg:w-auto  pt-3 md:m-20 lg:m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center flex items-center relative pb-4 lg:pb-0"
-              >
-                {/* Dhoni Image on the left */}
-                <img
-                  src={teamCaptains[match.t1]}
-                  className="lg:w-72 lg:h-72 md:w-60 md:h-60 w-48 h-48 drop-shadow-2xl mr-0 lg:mr-2 md:mr-16"
-                  alt={match.t1}
-                  style={{ marginTop: "-6rem" }}
-                />
-
-                {/* Content on the right */}
-                <div className="mr-4">
-                  <p className="font-medium text-black lg:text-xl md:text-2xl text-md mb-2 lg:mb-6">
-                    {match.t1}
-                  </p>
-                  <div className="flex items-center">
-                    {/* Image */}
-                    <div className="lg:mx-4 rounded-full border-2 border-blue-400 lg:w-16 lg:h-16 md:w-20 md:h-20 w-12 h-12 flex justify-center items-center">
-                      <img
-                        src={teamLogos[match.t1]}
-                        className="lg:w-10 lg:h-8 md:w-12 md:h-10 w-8 h-6 rounded-full"
-                        alt="Team Logo"
-                      />
-                    </div>
-
-                    {/* Score and Run Rate */}
-                    <div className="grid gap-0">
-                      <p className="lg:text-2xl md:text-2xl text-lg font-bold lg:pl-4 md:pl-4 pl-2">
-                        {match.t1s}
-                      </p>
-                      <p className="lg:text-md md:text-lg text-[10px] text-gray-600 font-bold md:pl-4 lg:pl-4 pl-2">
-                        Run-rate :{" "}
-                        {match.t1s ? calculateRunRate(match.t1s) : "Yet to bat"}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content for the second team */}
-                <div>
-                  <p className="font-medium text-black lg:text-xl md:text-2xl text-md mb-2 lg:mb-6 pl-6">
-                    {match.t2}
-                  </p>
-                  <div className="flex items-center">
-                    {/* Image */}
-                    <div className="mx-4 rounded-full border-2 border-red-800 lg:w-16 lg:h-16 md:w-20 md:h-20 w-12 h-12 flex justify-center items-center">
-                      <img
-                        src={teamLogos[match.t2]}
-                        className="lg:w-10 lg:h-12 md:w-12 md:h-16 w-8 h-10 rounded-full"
-                        alt="Team Logo"
-                      />
-                    </div>
-
-                    {/* Score and Run Rate */}
-                    <div className="grid gap-0">
-                      <p className="lg:text-2xl md:text-2xl text-lg font-bold lg:pl-4 md:pl-4 pl-2">
-                        {match.t2s || "Yet to bat"}
-                      </p>
-                      <p className="lg:text-md md:text-lg text-[10px] text-gray-600 font-bold md:pl-4 lg:pl-4 pl-2">
-                        Run-rate :{" "}
-                        {match.t2s && match.t2s !== ""
-                          ? calculateRunRate(match.t2s)
-                          : match.t2s
-                          ? "Yet to bat"
-                          : ""}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <img
-                  src={teamCaptains[match.t2]}
-                  className="lg:w-72 lg:h-72 md:w-60 md:h-60 w-48 h-48 drop-shadow-2xl md:mr-16"
-                  alt={match.t2}
-                  style={{ marginTop: "-6rem" }}
-                />
-              </div>
-            ))}
+            <button
+              type="button"
+              onClick={handleRefresh}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center"
+            >
+              <IoIosRefresh className="mr-2" />
+              Refresh
+            </button>
           </div>
-
-          <div className="flex m-3 flex-wrap justify-center gap-6 items-center">
+          <div className="lg:flex justify-center flex-wrap gap-6">
             {matches.map((match) => (
-              <>
-                <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
-                  <button
-                    type="button"
-                    style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
-                    className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl"
-                  >
-                    <GiCricketBat />
-                  </button>
-                  <div className="text-left">
-                    <p className="mt-3">
-                      <span className="text-lg font-semibold">
-                        {calculateStrikeRate(match.t1s)}
-                      </span>
-                    </p>
-                    <p className="text-xl font-bold text-gray-800 mt-1">
-                      Strike Rate
-                    </p>
-                  </div>
-                </div>
-                <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
-                  <button
-                    type="button"
-                    style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
-                    className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl"
-                  >
-                    <GoPrimitiveDot />
-                  </button>
-                  <div className="text-left">
-                    <p className="mt-3">
-                      <span className="text-lg font-semibold">
-                        {getWicketsLost(match.t1s)}
-                      </span>
-                    </p>
-                    <p className="text-xl font-bold text-gray-800 mt-1">
-                      Wickets Lost
-                    </p>
-                  </div>
-                </div>
-                <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
-                  <button
-                    type="button"
-                    style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
-                    className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl"
-                  >
-                    <IoIosMore />
-                  </button>
-                  <div className="text-left">
-                    <p className="mt-3">
-                      <span className="text-lg font-semibold">
-                        {match.status}
-                      </span>
-                    </p>
-                    <p className="text-xl font-bold text-gray-800 mt-1">
-                      Match Status
-                    </p>
-                  </div>
-                </div>
-              </>
+              <div key={match.id} className="flex flex-wrap justify-center gap-6">
+              <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl p-4 lg:w-auto h-60 md:w-80 w-full flex flex-col lg:flex-row items-center ">
+  <img
+    src={teamCaptains[match.t1]}
+    className="w-72 h-72 drop-shadow-2xl mb-4 lg:mr-4"
+    alt={match.t1}
+    style={{marginTop:"-10rem"}}
+  />
+  <div className="lg:w-3/4 flex flex-col items-start">
+    <p className="font-medium text-black text-xl mb-2">
+      {match.t1}
+    </p>
+    <div className="flex items-center mb-2">
+      <div className="rounded-full border-2 border-blue-400 w-16 h-16 flex justify-center items-center mr-4">
+        <img
+          src={teamLogos[match.t1]}
+          className="w-12 h-12 rounded-full"
+          alt="Team Logo"
+        />
+      </div>
+      <div className="text-center">
+        <p className="text-2xl font-bold">
+          {match.t1s}
+        </p>
+        <p className="text-gray-600 font-bold">
+          Run-rate: {match.t1s ? calculateRunRate(match.t1s) : "Yet to bat"}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-xl p-4 lg:w-auto h-60 md:w-80 w-full flex flex-col lg:flex-row items-center ">
+
+  <div className="lg:w-3/4 flex flex-col items-start">
+    <p className="font-medium text-black text-xl mb-2">
+      {match.t2}
+    </p>
+    <div className="flex items-center mb-2">
+      <div className="rounded-full border-2 border-red-800 w-16 h-16 flex justify-center items-center mr-4">
+        <img
+          src={teamLogos[match.t2]}
+          className="w-12 h-12 rounded-full"
+          alt="Team Logo"
+        />
+      </div>
+      <div className="text-center">
+        <p className="text-2xl font-bold">
+          {match.t2s || "Yet to bat"}
+        </p>
+        <p className="text-gray-600 font-bold">
+          Run-rate: {match.t2s && match.t2s !== "" ? calculateRunRate(match.t2s) : match.t2s ? "Yet to bat" : ""}
+        </p>
+      </div>
+      
+    </div>
+    
+  </div>
+  <img
+    src={teamCaptains[match.t2]}
+    className="w-72 h-72 drop-shadow-2xl mb-4 lg:mr-4"
+    alt={match.t2}
+    style={{marginTop:"-10rem"}}
+ />
+</div>
+
+
+               <div className="flex flex-wrap justify-center gap-6 mt-4">
+  <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg w-auto p-6 rounded-2xl flex items-center justify-between text-center">
+    <button
+      type="button"
+      style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
+      className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl"
+    >
+      <GiCricketBat />
+    </button>
+    <div className="text-left">
+      <p className="mt-3 text-lg font-semibold ml-4">
+        {calculateStrikeRate(match.t1s)}
+      </p>
+      <p className="text-xl font-bold text-gray-800 mt-1 ml-4">
+        Strike Rate
+      </p>
+    </div>
+  </div>
+
+  <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
+    <button
+      type="button"
+      style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
+      className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl"
+    >
+      <GoPrimitiveDot />
+    </button>
+    <div className="text-left">
+      <p className="mt-3 text-lg font-semibold ml-4">
+        {getWicketsLost(match.t1s)}
+      </p>
+      <p className="text-xl font-bold text-gray-800 mt-1 ml-4">
+        Wickets Lost
+      </p>
+    </div>
+  </div>
+
+  <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
+    <button
+      type="button"
+      style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
+      className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl"
+    >
+      <GrStatusGood />
+    </button>
+    <div className="text-left">
+      <p className="mt-3 ml-4 text-lg font-semibold">
+        {match.status}
+      </p>
+      <p className="text-xl font-bold text-gray-800 mt-1 ml-4">
+        Match Status
+      </p>
+    </div>
+  </div>
+</div>
+
+              </div>
             ))}
           </div>
         </div>
