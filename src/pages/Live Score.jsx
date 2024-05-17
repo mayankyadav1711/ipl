@@ -10,6 +10,8 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { IoIosMore } from "react-icons/io";
 import Loader from "../components/Loader";
+import { IoIosRefresh } from "react-icons/io";
+
 const LiveScore = () => {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state
@@ -122,15 +124,38 @@ const LiveScore = () => {
     const wicketsLost = oversString.split(" ")[1]?.slice(1, -1) || "0";
     return wicketsLost;
   };
+
+  const handleRefresh = async () => {
+    setLoading(true); // Set loading state to true
+  
+    try {
+      const response = await fetch("http://localhost:5000/api/aa");
+      const data = await response.json();
+      setMatches(data);
+    } catch (error) {
+      console.error("Error fetching live score:", error);
+    } finally {
+      setLoading(false); // Set loading state back to false
+    }
+  };
   return (
     <>
       {loading ? (
         <Loader />
       ) : (
+
+
         <div className="mt-48">
-          {/* <h1 className="text-center lg:text-6xl md:text-6xl text-4xl mb-24 font-medium">
-      Live Score
-    </h1> */}
+          <div className="flex justify-center mb-4">
+  <button
+    type="button"
+    onClick={handleRefresh}
+    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center"
+  >
+    <IoIosRefresh className="mr-2" />
+    Refresh
+  </button>
+</div>
           <div className="lg:flex justify-center grid gap-20 md:gap-0">
             {matches.map((match) => (
               <div
