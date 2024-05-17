@@ -54,15 +54,70 @@ const LiveScore = () => {
 
     fetchLiveScore();
   }, []);
+
+  const calculateRunRate = (scoreString) => {
+    const [runsString, oversString] = scoreString.split("/");
+    const runsScored = parseInt(runsString);
+  
+    let oversPlayed;
+  
+    // Check if the oversString includes parentheses
+    if (oversString.includes("(")) {
+      // Extract the overs value from within the parentheses
+      const match = oversString.match(/\((\d+(\.\d+)?)\)/);
+      oversPlayed = match ? parseFloat(match[1]) : NaN;
+    } else {
+      // If no parentheses, assume the oversString is the overs value
+      oversPlayed = parseFloat(oversString);
+    }
+  
+    if (isNaN(oversPlayed) || oversPlayed === 0 || isNaN(runsScored)) {
+      return "N/A";
+    }
+  console.log(runsScored,oversPlayed)
+    const runRate = runsScored / oversPlayed;
+    return runRate.toFixed(2);
+  };
+
+
+  const calculateStrikeRate = (scoreString) => {
+    const [runsString, oversString] = scoreString.split("/");
+    const runsScored = parseInt(runsString);
+  
+    let oversPlayed;
+  
+    // Check if the oversString includes parentheses
+    if (oversString.includes("(")) {
+      // Extract the overs value from within the parentheses
+      const match = oversString.match(/\((\d+(\.\d+)?)\)/);
+      oversPlayed = match ? parseFloat(match[1]) : NaN;
+    } else {
+      // If no parentheses, assume the oversString is the overs value
+      oversPlayed = parseFloat(oversString);
+    }
+  
+    if (isNaN(oversPlayed) || oversPlayed === 0 || isNaN(runsScored)) {
+      return "N/A";
+    }
+    const ballsFaced = oversPlayed * 6;
+    const strikeRate = (runsScored / ballsFaced) * 100;
+    return strikeRate.toFixed(2);
+  };
+
+  const getWicketsLost = (scoreString) => {
+    const [, oversString] = scoreString.split("/");
+    const wicketsLost = oversString.split(" ")[1]?.slice(1, -1) || "0";
+    return wicketsLost;
+  };
   return (
     <> 
     {loading ? (
     <Loader/>
    ) : (
-    <div className="mt-24">
-    <h1 className="text-center lg:text-6xl md:text-6xl text-4xl mb-24 font-medium">
+    <div className="mt-48">
+    {/* <h1 className="text-center lg:text-6xl md:text-6xl text-4xl mb-24 font-medium">
       Live Score
-    </h1>
+    </h1> */}
     <div className="lg:flex justify-center grid gap-20 md:gap-0">
       {matches.map((match) => (
         <div
@@ -99,8 +154,8 @@ const LiveScore = () => {
                 </p>
                 <p className="lg:text-md md:text-lg text-[10px] text-gray-600 font-bold md:pl-4 lg:pl-4 pl-2">
   Run-rate :{" "}
-  {match.t1s && match.t1s.split("/")[1]
-    ? (parseInt(match.t1s.split("/")[0]) / match.overs).toFixed(2)
+  {match.t1s
+    ? calculateRunRate(match.t1s)
     : "Yet to bat"}
 </p>
 
@@ -130,8 +185,8 @@ const LiveScore = () => {
                 </p>
                 <p className="lg:text-md md:text-lg text-[10px] text-gray-600 font-bold md:pl-4 lg:pl-4 pl-2">
   Run-rate :{" "}
-  {match.t2s && match.t2s !== "" && match.overs > 0
-    ? (parseInt(match.t2s.split("/")[0]) / match.overs).toFixed(2)
+  {match.t2s && match.t2s !== ""
+    ? calculateRunRate(match.t2s)
     : match.t2s
     ? "Yet to bat"
     : ""}
@@ -146,64 +201,46 @@ const LiveScore = () => {
       ))}
     </div>
 
-    {/* <div className="flex m-3 flex-wrap justify-center gap-6 items-center">
-         
+    <div className="flex m-3 flex-wrap justify-center gap-6 items-center">
+    {matches.map((match) => (  
+      <>
     <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
-              <button
-                type="button"
-                style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
-                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
-              >
-                <FaRunning />
-              </button>
-              <div className="text-left">
+  <button type="button" style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }} className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl">
+    <GiCricketBat />
+  </button>
+  <div className="text-left">
     <p className="mt-3">
-      <span className="text-lg font-semibold">10</span>
+      <span className="text-lg font-semibold">{calculateStrikeRate(match.t1s)}</span>
     </p>
-    <p className="text-xl font-bold text-gray-800 mt-1">Twos</p>
+    <p className="text-xl font-bold text-gray-800 mt-1">Strike Rate</p>
   </div>
-            </div>
-            <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
-              <button
-                type="button"
-                style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
-                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
-              >
-                <MdSportsCricket />
-              </button>
-              <div className="text-left">
+</div>
+           <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
+  <button type="button" style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }} className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl">
+    <GoPrimitiveDot />
+  </button>
+  <div className="text-left">
     <p className="mt-3">
-      <span className="text-lg font-semibold">9</span>
+      <span className="text-lg font-semibold">{getWicketsLost(match.t1s)}</span>
     </p>
-    <p className="text-xl font-bold text-gray-800 mt-1">Sixes</p>
+    <p className="text-xl font-bold text-gray-800 mt-1">Wickets Lost</p>
   </div>
-            </div>
-            <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
-              <button
-                type="button"
-                style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
-                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
-              >
-                <GiCricketBat />
-              </button>
-              <div className="text-left">
+</div>
+           <div className="bg-white h-auto w-auto dark:text-gray-200 dark:bg-secondary-dark-bg md:w-48 p-6 pt-9 rounded-2xl flex items-center justify-between text-center">
+  <button type="button" style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }} className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl">
+    <IoIosMore />
+  </button>
+  <div className="text-left">
     <p className="mt-3">
-      <span className="text-lg font-semibold">10</span>
+      <span className="text-lg font-semibold">{match.status}</span>
     </p>
-    <p className="text-xl font-bold text-gray-800 mt-1">Fours</p>
+    <p className="text-xl font-bold text-gray-800 mt-1">Match Status</p>
   </div>
-            </div>
+</div>
+</>
+))}
 
-            <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 grid justify-center items-center ">
-            <div>
-              <p className="text-gray-800 font-bold">Sixes Contribute</p>
-            </div>
-
-            <div className="w-40">
-           
-            </div>
-          </div>
-        </div> */}
+        </div>
         
 
     </div>
