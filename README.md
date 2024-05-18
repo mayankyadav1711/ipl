@@ -1,6 +1,7 @@
 
 <h1>IPL Dashboard</h1>
-<figure><img src=https://i.ibb.co/qNZnxvn/Screenshot-2024-05-18-202551.png" alt="Overview"></figure>
+<figure><img src="https://i.ibb.co/qNZnxvn/Screenshot-2024-05-18-202551.png" alt=""> </figure> 
+
 
 <h2>Overview</h2>
 <p>Our IPL Dashboard provides real-time updates and comprehensive information about the Indian Premier League (IPL). Utilizing web scraping techniques instead of paid APIs, we've created a dynamic and interactive platform to keep cricket enthusiasts informed and engaged.</p>
