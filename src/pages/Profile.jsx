@@ -3,32 +3,76 @@ import bg from "../components/images/motera.webp";
 import dhoni from "../components/images/dhoni.png";
 import Loader from "../components/Loader"
 import toast from 'react-hot-toast';
+//sample API response 
+const sampleData = {
+  "player": {
+    "name": "MS Dhoni",
+    "nationality": "Indian",
+    "overview": [
+      {
+        "IPL Debut": "2008"
+      },
+      {
+        "Specialization": "Wicketkeeper Batter"
+      },
+      {
+        "Date of Birth": "07 July 1981"
+      },
+      {
+        "Matches": "264"
+      }
+    ],
+    "about": "MS Dhoni added another feather to his cap in 2021 edition of the league as CSK won their fourth title. \nAhead of the 2022 edition of the league, MS Dhoni was one of the four retained players by the franchise and he was retained for a sum of INR 12 crore. \nA batting powerhouse, MS Dhoni possesses the ability to destroy different bowling attacks on his own. The calmness and composure in his demeanor along with a sharp cricketing brain accounts for a lethal combination on the cricketing field and the glistening silverware in the trophy cabinets at CSK are a testimony to his extraordinary leadership skills. \n\nHe was the face of Chennai Super Kings for the first eight editions of the league, leading them to two titles (2010 & 2011) and four runner-up finishes. He then became the first player to be drafted by Rising Pune Supergiant in the ninth edition of the league. And, he once again became the first player to be retained by CSK ahead of the IPL Player Auction 2018. The 2018 season of the league had a fairytale ending with another glistening silverware added to the trophy cabinet of the Chennai Super Kings. \n\nThe 2019 edition of the league too saw the CSK reach the finals of the tournament under MS Dhoni’s leadership. \n\nWhile MS Dhoni has hung up his boots on a 16-year illustrious career for Team India, he was seen donning the CSK colours once again in 2020.",
+    "image": "https://documents.iplt20.com/ipl/IPLHeadshot2024/57.png"
+  }
+}
 const Profile = () => {
   const [playerData, setPlayerData] = useState([]);
   const [backgroundImage, setBackgroundImage] = useState(bg);
   const [playAudio, setPlayAudio] = useState(false);
   const [loading, setLoading] = useState(true); // Add loading state
 
+  // useEffect(() => {
+  //   const fetchPlayerData = async () => {
+  //     try {
+  //       // Extract teamname and playercode from the URL
+  //       const urlParams = window.location.pathname.split("/");
+  //       const teamname = urlParams[2];
+  //       const playercode = urlParams[3];
+
+  //       const response = await fetch(
+  //         `/api/player/${teamname}/${playercode}`
+  //       );
+  //       const data = await response.json();
+  //       setPlayerData([data.player]); // Wrap player data in an array
+  //       setBackgroundImage(getBackgroundImage(teamname));
+  //       setLoading(false); // Update loading state once data is fetched
+
+  //       if (teamname === "chennai-super-kings" && playercode === "1") {
+  //         setPlayAudio(true);
+  //         toast.success("Thala Supremacy 😎");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching player data:", error);
+  //     }
+  //   };
+
+  //   fetchPlayerData();
+  // }, []);
   useEffect(() => {
     const fetchPlayerData = async () => {
       try {
-        // Extract teamname and playercode from the URL
-        const urlParams = window.location.pathname.split("/");
-        const teamname = urlParams[2];
-        const playercode = urlParams[3];
-
-        const response = await fetch(
-          `http://localhost:5000/api/player/${teamname}/${playercode}`
-        );
-        const data = await response.json();
-        setPlayerData([data.player]); // Wrap player data in an array
+      
+       const teamname = "chennai-super-kings";
+       
+        setPlayerData([sampleData.player]); // Wrap player data in an array
         setBackgroundImage(getBackgroundImage(teamname));
         setLoading(false); // Update loading state once data is fetched
-
-        if (teamname === "chennai-super-kings" && playercode === "1") {
+        
+       
           setPlayAudio(true);
           toast.success("Thala Supremacy 😎");
-        }
+        
       } catch (error) {
         console.error("Error fetching player data:", error);
       }

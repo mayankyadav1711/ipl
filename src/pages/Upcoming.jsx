@@ -3,8 +3,59 @@ import csk from "../components/images/csk.png";
 import rcb from "../components/images/rcb.png";
 import vs from "../components/images/versus.png";
 import trophy from "../components/images/trophy.svg";
-import Loader from "../components/Loader"
-
+import Loader from "../components/Loader";
+//sample API response 
+const sampleData = [
+    {
+      "date": "18",
+      "time": "7:30",
+      "venue": "M Chinnaswamy Stadium, Bengaluru",
+      "homeTeam": "Royal Challengers Bengaluru",
+      "awayTeam": "Chennai Super Kings"
+    },
+    {
+      "date": "19",
+      "time": "3:30",
+      "venue": "Rajiv Gandhi International Stadium, Hyderabad",
+      "homeTeam": "Sunrisers Hyderabad",
+      "awayTeam": "Punjab Kings"
+    },
+    {
+      "date": "19",
+      "time": "7:30",
+      "venue": "Barsapara Cricket Stadium, Guwahati",
+      "homeTeam": "Rajasthan Royals",
+      "awayTeam": "Kolkata Knight Riders"
+    },
+    {
+      "date": "21",
+      "time": "7:30",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "homeTeam": "TBD",
+      "awayTeam": "TBD"
+    },
+    {
+      "date": "22",
+      "time": "7:30",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "homeTeam": "TBD",
+      "awayTeam": "TBD"
+    },
+    {
+      "date": "24",
+      "time": "7:30",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "homeTeam": "TBD",
+      "awayTeam": "TBD"
+    },
+    {
+      "date": "26",
+      "time": "7:30",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "homeTeam": "TBD",
+      "awayTeam": "TBD"
+    }
+  ]
 const teamLogos = {
     "Chennai Super Kings": "https://scores.iplt20.com/ipl/teamlogos/CSK.png",
     "Royal Challengers Bengaluru": "https://scores.iplt20.com/ipl/teamlogos/aFPMviEPyJ1710927747rcb.png",
@@ -34,14 +85,27 @@ const Upcoming = () => {
         fetchMatchResults();
     }, []);
 
+    // const fetchMatchResults = async () => {
+    //     try {
+    //         const response = await fetch('/api/new-matches');
+    //         if (!response.ok) {
+    //             throw new Error('Failed to fetch match results');
+    //         }
+    //         const data = await response.json();
+    //         const matchesWithActiveTab = data.map(match => ({ ...match, activeTab: 'stats' }));
+
+    //         setMatchResults(matchesWithActiveTab);
+    //         setLoading(false); // Update loading state once data is fetched
+
+    //     } catch (error) {
+    //         console.error('Error fetching match results:', error);
+    //     }
+    // };
     const fetchMatchResults = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/new-matches');
-            if (!response.ok) {
-                throw new Error('Failed to fetch match results');
-            }
-            const data = await response.json();
-            const matchesWithActiveTab = data.map(match => ({ ...match, activeTab: 'stats' }));
+           
+           
+            const matchesWithActiveTab = sampleData.map(match => ({ ...match, activeTab: 'stats' }));
 
             setMatchResults(matchesWithActiveTab);
             setLoading(false); // Update loading state once data is fetched

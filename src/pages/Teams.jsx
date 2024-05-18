@@ -10,7 +10,61 @@ import mi from "../components/images/mi.png"
 import pk from "../components/images/pk.png"
 import rr from "../components/images/rr.png"
 import srh from "../components/images/srh.png"
-import Loader from "../components/Loader"
+import Loader from "../components/Loader";
+
+// sample API response 
+const sampleData = [
+  {
+    "name": "Chennai Super Kings",
+    "logoUrl": "https://documents.iplt20.com/ipl/CSK/logos/Logooutline/CSKoutline.png",
+    "abbreviation": "CSK"
+  },
+  {
+    "name": "Delhi Capitals",
+    "logoUrl": "https://documents.iplt20.com/ipl/DC/Logos/LogoOutline/DCoutline.png",
+    "abbreviation": "DC"
+  },
+  {
+    "name": "Gujarat Titans",
+    "logoUrl": "https://documents.iplt20.com/ipl/GT/Logos/Logooutline/GToutline.png",
+    "abbreviation": "GT"
+  },
+  {
+    "name": "Kolkata Knight Riders",
+    "logoUrl": "https://documents.iplt20.com/ipl/KKR/Logos/Logooutline/KKRoutline.png",
+    "abbreviation": "KKR"
+  },
+  {
+    "name": "Lucknow Super Giants",
+    "logoUrl": "https://documents.iplt20.com/ipl/LSG/Logos/Logooutline/LSGoutline.png",
+    "abbreviation": "LSG"
+  },
+  {
+    "name": "Mumbai Indians",
+    "logoUrl": "https://documents.iplt20.com/ipl/MI/Logos/Logooutline/MIoutline.png",
+    "abbreviation": "MI"
+  },
+  {
+    "name": "Punjab Kings",
+    "logoUrl": "https://documents.iplt20.com/ipl/PBKS/Logos/Logooutline/PBKSoutline.png",
+    "abbreviation": "PBKS"
+  },
+  {
+    "name": "Rajasthan Royals",
+    "logoUrl": "https://documents.iplt20.com/ipl/RR/Logos/Logooutline/RRoutline.png",
+    "abbreviation": "RR"
+  },
+  {
+    "name": "Royal Challengers Bengaluru",
+    "logoUrl": "https://documents.iplt20.com/ipl/RCB/Logos/Logooutline/RCBoutline.png",
+    "abbreviation": "RCB"
+  },
+  {
+    "name": "Sunrisers Hyderabad",
+    "logoUrl": "https://documents.iplt20.com/ipl/SRH/Logos/Logooutline/SRHoutline.png",
+    "abbreviation": "SRH"
+  }
+]
 
 const Teams = () => {
   const [isLoading, setIsLoading] = useState(true);

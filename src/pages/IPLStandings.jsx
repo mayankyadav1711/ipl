@@ -10,17 +10,115 @@ import gtLogo from "../components/images/gt.png";
 import pbksLogo from "../components/images/pk.png";
 import miLogo from "../components/images/mi.png"
 import Loader from "../components/Loader"
+//sample API response 
+const sampleData = [
+  {
+    "position": "1",
+    "team": "KKR",
+    "played": "13",
+    "won": "9",
+    "lost": "3",
+    "points": "19"
+  },
+  {
+    "position": "2",
+    "team": "RR",
+    "played": "13",
+    "won": "8",
+    "lost": "5",
+    "points": "16"
+  },
+  {
+    "position": "3",
+    "team": "SRH",
+    "played": "13",
+    "won": "7",
+    "lost": "5",
+    "points": "15"
+  },
+  {
+    "position": "4",
+    "team": "CSK",
+    "played": "13",
+    "won": "7",
+    "lost": "6",
+    "points": "14"
+  },
+  {
+    "position": "5",
+    "team": "DC",
+    "played": "14",
+    "won": "7",
+    "lost": "7",
+    "points": "14"
+  },
+  {
+    "position": "6",
+    "team": "LSG",
+    "played": "14",
+    "won": "7",
+    "lost": "7",
+    "points": "14"
+  },
+  {
+    "position": "7",
+    "team": "RCB",
+    "played": "13",
+    "won": "6",
+    "lost": "7",
+    "points": "12"
+  },
+  {
+    "position": "8",
+    "team": "GT",
+    "played": "14",
+    "won": "5",
+    "lost": "7",
+    "points": "12"
+  },
+  {
+    "position": "9",
+    "team": "PBKS",
+    "played": "13",
+    "won": "5",
+    "lost": "8",
+    "points": "10"
+  },
+  {
+    "position": "10",
+    "team": "MI",
+    "played": "14",
+    "won": "4",
+    "lost": "10",
+    "points": "8"
+  }
+]
 const IPLStandings = () => {
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state
 
+  // useEffect(() => {
+  //   const fetchTeamsData = async () => {
+  //     try {
+  //       const response = await fetch("/api/ipl-points-table");
+  //       const data = await response.json();
+        
+  //       setTeams(data);
+  //       setLoading(false); // Update loading state once data is fetched
+
+  //     } catch (error) {
+  //       console.error("Error fetching teams data:", error);
+  //     }
+  //   };
+
+  //   fetchTeamsData();
+  // }, []);
   useEffect(() => {
     const fetchTeamsData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/ipl-points-table");
-        const data = await response.json();
+       
         
-        setTeams(data);
+        setTeams(sampleData);
         setLoading(false); // Update loading state once data is fetched
 
       } catch (error) {
@@ -55,9 +153,9 @@ const IPLStandings = () => {
       {loading ? (
          <Loader/>
         ) : (
-      <div className='flex flex-wrap justify-center mt-20'>
+      <div className='flex flex-wrap justify-center mt-28'>
         {teams.map((team, index) => (
-          <div key={index} className={`parent m-8 ${getTeamClass(team.team)}`}>
+          <div key={index} className={`parent m-2 mb-10 ${getTeamClass(team.team)}`}>
             <div className="parentcard">
               <div className="logo">
               <span className="parentcircle parentcircle3"></span>
