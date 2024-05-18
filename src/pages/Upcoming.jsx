@@ -3,8 +3,95 @@ import csk from "../components/images/csk.png";
 import rcb from "../components/images/rcb.png";
 import vs from "../components/images/versus.png";
 import trophy from "../components/images/trophy.svg";
-import Loader from "../components/Loader"
-
+const Loader = () => {
+    return (
+      <div className="flex justify-center items-center h-screen">
+      <div className="loader"> <svg role="img" aria-label="Mouth and eyes come from 9:00 and rotate clockwise into position, right eye blinks, then all parts rotate and merge into 3:00" class="smiley" viewBox="0 0 128 128" width="128px" height="128px">
+  <defs>
+  <clipPath id="smiley-eyes">
+  <circle class="smiley__eye1" cx="64" cy="64" r="8" transform="rotate(-40,64,64) translate(0,-56)" />
+  <circle class="smiley__eye2" cx="64" cy="64" r="8" transform="rotate(40,64,64) translate(0,-56)" />
+  </clipPath>
+  <linearGradient id="smiley-grad" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#000" />
+  <stop offset="100%" stop-color="#fff" />
+  </linearGradient>
+  <mask id="smiley-mask">
+  <rect x="0" y="0" width="128" height="128" fill="url(#smiley-grad)" />
+  </mask>
+  </defs>
+  <g stroke-linecap="round" stroke-width="12" stroke-dasharray="175.93 351.86">
+  <g>
+  <rect fill="hsl(193,90%,50%)" width="128" height="64" clip-path="url(#smiley-eyes)" />
+  <g fill="none" stroke="hsl(193,90%,50%)">
+      <circle class="smiley__mouth1" cx="64" cy="64" r="56" transform="rotate(180,64,64)" />
+      <circle class="smiley__mouth2" cx="64" cy="64" r="56" transform="rotate(0,64,64)" />
+  </g>
+  </g>
+  <g mask="url(#smiley-mask)">
+  <rect fill="hsl(223,90%,50%)" width="128" height="64" clip-path="url(#smiley-eyes)" />
+  <g fill="none" stroke="hsl(223,90%,50%)">
+      <circle class="smiley__mouth1" cx="64" cy="64" r="56" transform="rotate(180,64,64)" />
+      <circle class="smiley__mouth2" cx="64" cy="64" r="56" transform="rotate(0,64,64)" />
+  </g>
+  </g>
+  </g>
+  </svg></div>
+  </div>
+    )
+  }
+//sample API response 
+const sampleData = [
+    {
+      "date": "18",
+      "time": "7:30",
+      "venue": "M Chinnaswamy Stadium, Bengaluru",
+      "homeTeam": "Royal Challengers Bengaluru",
+      "awayTeam": "Chennai Super Kings"
+    },
+    {
+      "date": "19",
+      "time": "3:30",
+      "venue": "Rajiv Gandhi International Stadium, Hyderabad",
+      "homeTeam": "Sunrisers Hyderabad",
+      "awayTeam": "Punjab Kings"
+    },
+    {
+      "date": "19",
+      "time": "7:30",
+      "venue": "Barsapara Cricket Stadium, Guwahati",
+      "homeTeam": "Rajasthan Royals",
+      "awayTeam": "Kolkata Knight Riders"
+    },
+    {
+      "date": "21",
+      "time": "7:30",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "homeTeam": "TBD",
+      "awayTeam": "TBD"
+    },
+    {
+      "date": "22",
+      "time": "7:30",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "homeTeam": "TBD",
+      "awayTeam": "TBD"
+    },
+    {
+      "date": "24",
+      "time": "7:30",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "homeTeam": "TBD",
+      "awayTeam": "TBD"
+    },
+    {
+      "date": "26",
+      "time": "7:30",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "homeTeam": "TBD",
+      "awayTeam": "TBD"
+    }
+  ]
 const teamLogos = {
     "Chennai Super Kings": "https://scores.iplt20.com/ipl/teamlogos/CSK.png",
     "Royal Challengers Bengaluru": "https://scores.iplt20.com/ipl/teamlogos/aFPMviEPyJ1710927747rcb.png",
@@ -34,14 +121,27 @@ const Upcoming = () => {
         fetchMatchResults();
     }, []);
 
+    // const fetchMatchResults = async () => {
+    //     try {
+    //         const response = await fetch('/api/new-matches');
+    //         if (!response.ok) {
+    //             throw new Error('Failed to fetch match results');
+    //         }
+    //         const data = await response.json();
+    //         const matchesWithActiveTab = data.map(match => ({ ...match, activeTab: 'stats' }));
+
+    //         setMatchResults(matchesWithActiveTab);
+    //         setLoading(false); // Update loading state once data is fetched
+
+    //     } catch (error) {
+    //         console.error('Error fetching match results:', error);
+    //     }
+    // };
     const fetchMatchResults = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/new-matches');
-            if (!response.ok) {
-                throw new Error('Failed to fetch match results');
-            }
-            const data = await response.json();
-            const matchesWithActiveTab = data.map(match => ({ ...match, activeTab: 'stats' }));
+           
+           
+            const matchesWithActiveTab = sampleData.map(match => ({ ...match, activeTab: 'stats' }));
 
             setMatchResults(matchesWithActiveTab);
             setLoading(false); // Update loading state once data is fetched

@@ -9,18 +9,152 @@ import lsgLogo from "../components/images/lsg.png";
 import gtLogo from "../components/images/gt.png";
 import pbksLogo from "../components/images/pk.png";
 import miLogo from "../components/images/mi.png"
-import Loader from "../components/Loader"
+const Loader = () => {
+  return (
+    <div className="flex justify-center items-center h-screen">
+    <div className="loader"> <svg role="img" aria-label="Mouth and eyes come from 9:00 and rotate clockwise into position, right eye blinks, then all parts rotate and merge into 3:00" class="smiley" viewBox="0 0 128 128" width="128px" height="128px">
+<defs>
+<clipPath id="smiley-eyes">
+<circle class="smiley__eye1" cx="64" cy="64" r="8" transform="rotate(-40,64,64) translate(0,-56)" />
+<circle class="smiley__eye2" cx="64" cy="64" r="8" transform="rotate(40,64,64) translate(0,-56)" />
+</clipPath>
+<linearGradient id="smiley-grad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#000" />
+<stop offset="100%" stop-color="#fff" />
+</linearGradient>
+<mask id="smiley-mask">
+<rect x="0" y="0" width="128" height="128" fill="url(#smiley-grad)" />
+</mask>
+</defs>
+<g stroke-linecap="round" stroke-width="12" stroke-dasharray="175.93 351.86">
+<g>
+<rect fill="hsl(193,90%,50%)" width="128" height="64" clip-path="url(#smiley-eyes)" />
+<g fill="none" stroke="hsl(193,90%,50%)">
+    <circle class="smiley__mouth1" cx="64" cy="64" r="56" transform="rotate(180,64,64)" />
+    <circle class="smiley__mouth2" cx="64" cy="64" r="56" transform="rotate(0,64,64)" />
+</g>
+</g>
+<g mask="url(#smiley-mask)">
+<rect fill="hsl(223,90%,50%)" width="128" height="64" clip-path="url(#smiley-eyes)" />
+<g fill="none" stroke="hsl(223,90%,50%)">
+    <circle class="smiley__mouth1" cx="64" cy="64" r="56" transform="rotate(180,64,64)" />
+    <circle class="smiley__mouth2" cx="64" cy="64" r="56" transform="rotate(0,64,64)" />
+</g>
+</g>
+</g>
+</svg></div>
+</div>
+  )
+}
+//sample API response 
+const sampleData = [
+  {
+    "position": "1",
+    "team": "KKR",
+    "played": "13",
+    "won": "9",
+    "lost": "3",
+    "points": "19"
+  },
+  {
+    "position": "2",
+    "team": "RR",
+    "played": "13",
+    "won": "8",
+    "lost": "5",
+    "points": "16"
+  },
+  {
+    "position": "3",
+    "team": "SRH",
+    "played": "13",
+    "won": "7",
+    "lost": "5",
+    "points": "15"
+  },
+  {
+    "position": "4",
+    "team": "CSK",
+    "played": "13",
+    "won": "7",
+    "lost": "6",
+    "points": "14"
+  },
+  {
+    "position": "5",
+    "team": "DC",
+    "played": "14",
+    "won": "7",
+    "lost": "7",
+    "points": "14"
+  },
+  {
+    "position": "6",
+    "team": "LSG",
+    "played": "14",
+    "won": "7",
+    "lost": "7",
+    "points": "14"
+  },
+  {
+    "position": "7",
+    "team": "RCB",
+    "played": "13",
+    "won": "6",
+    "lost": "7",
+    "points": "12"
+  },
+  {
+    "position": "8",
+    "team": "GT",
+    "played": "14",
+    "won": "5",
+    "lost": "7",
+    "points": "12"
+  },
+  {
+    "position": "9",
+    "team": "PBKS",
+    "played": "13",
+    "won": "5",
+    "lost": "8",
+    "points": "10"
+  },
+  {
+    "position": "10",
+    "team": "MI",
+    "played": "14",
+    "won": "4",
+    "lost": "10",
+    "points": "8"
+  }
+]
 const IPLStandings = () => {
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state
 
+  // useEffect(() => {
+  //   const fetchTeamsData = async () => {
+  //     try {
+  //       const response = await fetch("/api/ipl-points-table");
+  //       const data = await response.json();
+        
+  //       setTeams(data);
+  //       setLoading(false); // Update loading state once data is fetched
+
+  //     } catch (error) {
+  //       console.error("Error fetching teams data:", error);
+  //     }
+  //   };
+
+  //   fetchTeamsData();
+  // }, []);
   useEffect(() => {
     const fetchTeamsData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/ipl-points-table");
-        const data = await response.json();
+       
         
-        setTeams(data);
+        setTeams(sampleData);
         setLoading(false); // Update loading state once data is fetched
 
       } catch (error) {
@@ -55,9 +189,9 @@ const IPLStandings = () => {
       {loading ? (
          <Loader/>
         ) : (
-      <div className='flex flex-wrap justify-center mt-20'>
+      <div className='flex flex-wrap justify-center mt-28'>
         {teams.map((team, index) => (
-          <div key={index} className={`parent m-8 ${getTeamClass(team.team)}`}>
+          <div key={index} className={`parent m-2 mb-10 ${getTeamClass(team.team)}`}>
             <div className="parentcard">
               <div className="logo">
               <span className="parentcircle parentcircle3"></span>

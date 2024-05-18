@@ -4,7 +4,984 @@ import rcb from "../components/images/rcb.png";
 import vs from "../components/images/versus.png";
 import motera from "../components/images/motera.webp";
 import trophy from "../components/images/trophy.svg";
-import Loader from "../components/Loader"
+const Loader = () => {
+  return (
+    <div className="flex justify-center items-center h-screen">
+    <div className="loader"> <svg role="img" aria-label="Mouth and eyes come from 9:00 and rotate clockwise into position, right eye blinks, then all parts rotate and merge into 3:00" class="smiley" viewBox="0 0 128 128" width="128px" height="128px">
+<defs>
+<clipPath id="smiley-eyes">
+<circle class="smiley__eye1" cx="64" cy="64" r="8" transform="rotate(-40,64,64) translate(0,-56)" />
+<circle class="smiley__eye2" cx="64" cy="64" r="8" transform="rotate(40,64,64) translate(0,-56)" />
+</clipPath>
+<linearGradient id="smiley-grad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#000" />
+<stop offset="100%" stop-color="#fff" />
+</linearGradient>
+<mask id="smiley-mask">
+<rect x="0" y="0" width="128" height="128" fill="url(#smiley-grad)" />
+</mask>
+</defs>
+<g stroke-linecap="round" stroke-width="12" stroke-dasharray="175.93 351.86">
+<g>
+<rect fill="hsl(193,90%,50%)" width="128" height="64" clip-path="url(#smiley-eyes)" />
+<g fill="none" stroke="hsl(193,90%,50%)">
+    <circle class="smiley__mouth1" cx="64" cy="64" r="56" transform="rotate(180,64,64)" />
+    <circle class="smiley__mouth2" cx="64" cy="64" r="56" transform="rotate(0,64,64)" />
+</g>
+</g>
+<g mask="url(#smiley-mask)">
+<rect fill="hsl(223,90%,50%)" width="128" height="64" clip-path="url(#smiley-eyes)" />
+<g fill="none" stroke="hsl(223,90%,50%)">
+    <circle class="smiley__mouth1" cx="64" cy="64" r="56" transform="rotate(180,64,64)" />
+    <circle class="smiley__mouth2" cx="64" cy="64" r="56" transform="rotate(0,64,64)" />
+</g>
+</g>
+</g>
+</svg></div>
+</div>
+  )
+}
+//sample API response 
+const sampleData = [
+    {
+      "matchOrder": "MATCH 67",
+      "venue": "Wankhede Stadium, Mumbai",
+      "dateTime": "MAY, FRI 17 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "result": "Mumbai Indians won "
+    },
+    {
+      "matchOrder": "MATCH 66",
+      "venue": "Rajiv Gandhi International Stadium, Hyderabad",
+      "dateTime": "MAY, THU 16 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "result": "Sunrisers Hyderabad won "
+    },
+    {
+      "matchOrder": "MATCH 65",
+      "venue": "Barsapara Cricket Stadium, Guwahati",
+      "dateTime": "MAY, WED 15 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "result": "Rajasthan Royals won "
+    },
+    {
+      "matchOrder": "MATCH 64",
+      "venue": "Arun Jaitley Stadium, Delhi",
+      "dateTime": "MAY, TUE 14 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "result": "Delhi Capitals won "
+    },
+    {
+      "matchOrder": "MATCH 63",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "dateTime": "MAY, MON 13 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "result": "Gujarat Titans won "
+    },
+    {
+      "matchOrder": "MATCH 62",
+      "venue": "M Chinnaswamy Stadium, Bengaluru",
+      "dateTime": "MAY, SUN 12 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "result": "Royal Challengers Bengaluru won "
+    },
+    {
+      "matchOrder": "MATCH 61",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "dateTime": "MAY, SUN 12 , 3:30 pm IST",
+      "homeTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "result": "Chennai Super Kings won "
+    },
+    {
+      "matchOrder": "MATCH 60",
+      "venue": "Eden Gardens, Kolkata",
+      "dateTime": "MAY, SAT 11 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "result": "Kolkata Knight Riders won "
+    },
+    {
+      "matchOrder": "MATCH 59",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "dateTime": "MAY, FRI 10 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "result": "Gujarat Titans won "
+    },
+    {
+      "matchOrder": "MATCH 58",
+      "venue": "Himachal Pradesh Cricket Association Stadium, Dharamsala",
+      "dateTime": "MAY, THU 9 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "result": "Punjab Kings won "
+    },
+    {
+      "matchOrder": "MATCH 57",
+      "venue": "Rajiv Gandhi International Stadium, Hyderabad",
+      "dateTime": "MAY, WED 8 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "result": "Sunrisers Hyderabad won "
+    },
+    {
+      "matchOrder": "MATCH 56",
+      "venue": "Arun Jaitley Stadium, Delhi",
+      "dateTime": "MAY, TUE 7 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "result": "Delhi Capitals won "
+    },
+    {
+      "matchOrder": "MATCH 55",
+      "venue": "Wankhede Stadium, Mumbai",
+      "dateTime": "MAY, MON 6 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "result": "Mumbai Indians won "
+    },
+    {
+      "matchOrder": "MATCH 54",
+      "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
+      "dateTime": "MAY, SUN 5 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "result": "Lucknow Super Giants won "
+    },
+    {
+      "matchOrder": "MATCH 53",
+      "venue": "Himachal Pradesh Cricket Association Stadium, Dharamsala",
+      "dateTime": "MAY, SUN 5 , 3:30 pm IST",
+      "homeTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "result": "Punjab Kings won "
+    },
+    {
+      "matchOrder": "MATCH 52",
+      "venue": "M Chinnaswamy Stadium, Bengaluru",
+      "dateTime": "MAY, SAT 4 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "result": "Royal Challengers Bengaluru won "
+    },
+    {
+      "matchOrder": "MATCH 51",
+      "venue": "Wankhede Stadium, Mumbai",
+      "dateTime": "MAY, FRI 3 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "result": "Mumbai Indians won "
+    },
+    {
+      "matchOrder": "MATCH 50",
+      "venue": "Rajiv Gandhi International Stadium, Hyderabad",
+      "dateTime": "MAY, THU 2 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "result": "Sunrisers Hyderabad won "
+    },
+    {
+      "matchOrder": "MATCH 49",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "dateTime": "MAY, WED 1 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "result": "Chennai Super Kings won "
+    },
+    {
+      "matchOrder": "MATCH 48",
+      "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
+      "dateTime": "APR, TUE 30 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "result": "Lucknow Super Giants won "
+    },
+    {
+      "matchOrder": "MATCH 47",
+      "venue": "Eden Gardens, Kolkata",
+      "dateTime": "APR, MON 29 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "result": "Kolkata Knight Riders won "
+    },
+    {
+      "matchOrder": "MATCH 46",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "dateTime": "APR, SUN 28 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "result": "Chennai Super Kings won "
+    },
+    {
+      "matchOrder": "MATCH 45",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "dateTime": "APR, SUN 28 , 3:30 pm IST",
+      "homeTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "result": "Gujarat Titans won "
+    },
+    {
+      "matchOrder": "MATCH 44",
+      "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
+      "dateTime": "APR, SAT 27 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "result": "Lucknow Super Giants won "
+    },
+    {
+      "matchOrder": "MATCH 43",
+      "venue": "Arun Jaitley Stadium, Delhi",
+      "dateTime": "APR, SAT 27 , 3:30 pm IST",
+      "homeTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "result": "Delhi Capitals won "
+    },
+    {
+      "matchOrder": "MATCH 42",
+      "venue": "Eden Gardens, Kolkata",
+      "dateTime": "APR, FRI 26 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "result": "Kolkata Knight Riders won "
+    },
+    {
+      "matchOrder": "MATCH 41",
+      "venue": "Rajiv Gandhi International Stadium, Hyderabad",
+      "dateTime": "APR, THU 25 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "result": "Sunrisers Hyderabad won "
+    },
+    {
+      "matchOrder": "MATCH 40",
+      "venue": "Arun Jaitley Stadium, Delhi",
+      "dateTime": "APR, WED 24 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "result": "Delhi Capitals won "
+    },
+    {
+      "matchOrder": "MATCH 39",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "dateTime": "APR, TUE 23 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "result": "Chennai Super Kings won "
+    },
+    {
+      "matchOrder": "MATCH 38",
+      "venue": "Sawai Mansingh Stadium, Jaipur",
+      "dateTime": "APR, MON 22 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "result": "Rajasthan Royals won "
+    },
+    {
+      "matchOrder": "MATCH 37",
+      "venue": "PCA New Stadium, Mullanpur",
+      "dateTime": "APR, SUN 21 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "result": "Punjab Kings won "
+    },
+    {
+      "matchOrder": "MATCH 36",
+      "venue": "Eden Gardens, Kolkata",
+      "dateTime": "APR, SUN 21 , 3:30 pm IST",
+      "homeTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "result": "Kolkata Knight Riders won "
+    },
+    {
+      "matchOrder": "MATCH 35",
+      "venue": "Arun Jaitley Stadium, Delhi",
+      "dateTime": "APR, SAT 20 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "result": "Delhi Capitals won "
+    },
+    {
+      "matchOrder": "MATCH 34",
+      "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
+      "dateTime": "APR, FRI 19 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "result": "Lucknow Super Giants won "
+    },
+    {
+      "matchOrder": "MATCH 33",
+      "venue": "PCA New Stadium, Mullanpur",
+      "dateTime": "APR, THU 18 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "result": "Punjab Kings won "
+    },
+    {
+      "matchOrder": "MATCH 32",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "dateTime": "APR, WED 17 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "result": "Gujarat Titans won "
+    },
+    {
+      "matchOrder": "MATCH 31",
+      "venue": "Eden Gardens, Kolkata",
+      "dateTime": "APR, TUE 16 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "result": "Kolkata Knight Riders won "
+    },
+    {
+      "matchOrder": "MATCH 30",
+      "venue": "M Chinnaswamy Stadium, Bengaluru",
+      "dateTime": "APR, MON 15 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "result": "Royal Challengers Bengaluru won "
+    },
+    {
+      "matchOrder": "MATCH 29",
+      "venue": "Wankhede Stadium, Mumbai",
+      "dateTime": "APR, SUN 14 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "result": "Mumbai Indians won "
+    },
+    {
+      "matchOrder": "MATCH 28",
+      "venue": "Eden Gardens, Kolkata",
+      "dateTime": "APR, SUN 14 , 3:30 pm IST",
+      "homeTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "result": "Kolkata Knight Riders won "
+    },
+    {
+      "matchOrder": "MATCH 27",
+      "venue": "PCA New Stadium, Mullanpur",
+      "dateTime": "APR, SAT 13 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "result": "Punjab Kings won "
+    },
+    {
+      "matchOrder": "MATCH 26",
+      "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
+      "dateTime": "APR, FRI 12 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "result": "Lucknow Super Giants won "
+    },
+    {
+      "matchOrder": "MATCH 25",
+      "venue": "Wankhede Stadium, Mumbai",
+      "dateTime": "APR, THU 11 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "result": "Mumbai Indians won "
+    },
+    {
+      "matchOrder": "MATCH 24",
+      "venue": "Sawai Mansingh Stadium, Jaipur",
+      "dateTime": "APR, WED 10 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "result": "Rajasthan Royals won "
+    },
+    {
+      "matchOrder": "MATCH 23",
+      "venue": "PCA New Stadium, Mullanpur",
+      "dateTime": "APR, TUE 9 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "result": "Punjab Kings won "
+    },
+    {
+      "matchOrder": "MATCH 22",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "dateTime": "APR, MON 8 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "result": "Chennai Super Kings won "
+    },
+    {
+      "matchOrder": "MATCH 21",
+      "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
+      "dateTime": "APR, SUN 7 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "result": "Lucknow Super Giants won "
+    },
+    {
+      "matchOrder": "MATCH 20",
+      "venue": "Wankhede Stadium, Mumbai",
+      "dateTime": "APR, SUN 7 , 3:30 pm IST",
+      "homeTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "result": "Mumbai Indians won "
+    },
+    {
+      "matchOrder": "MATCH 19",
+      "venue": "Sawai Mansingh Stadium, Jaipur",
+      "dateTime": "APR, SAT 6 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "result": "Rajasthan Royals won "
+    },
+    {
+      "matchOrder": "MATCH 18",
+      "venue": "Rajiv Gandhi International Stadium, Hyderabad",
+      "dateTime": "APR, FRI 5 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "result": "Sunrisers Hyderabad won "
+    },
+    {
+      "matchOrder": "MATCH 17",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "dateTime": "APR, THU 4 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "result": "Gujarat Titans won "
+    },
+    {
+      "matchOrder": "MATCH 16",
+      "venue": "Dr YS Rajasekhara Reddy ACA-VDCA Cricket Stadium, Visakhapatnam",
+      "dateTime": "APR, WED 3 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "result": "Delhi Capitals won "
+    },
+    {
+      "matchOrder": "MATCH 15",
+      "venue": "M Chinnaswamy Stadium, Bengaluru",
+      "dateTime": "APR, TUE 2 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "result": "Royal Challengers Bengaluru won "
+    },
+    {
+      "matchOrder": "MATCH 14",
+      "venue": "Wankhede Stadium, Mumbai",
+      "dateTime": "APR, MON 1 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "result": "Mumbai Indians won "
+    },
+    {
+      "matchOrder": "MATCH 13",
+      "venue": "Dr YS Rajasekhara Reddy ACA-VDCA Cricket Stadium, Visakhapatnam",
+      "dateTime": "MAR, SUN 31 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "result": "Delhi Capitals won "
+    },
+    {
+      "matchOrder": "MATCH 12",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "dateTime": "MAR, SUN 31 , 3:30 pm IST",
+      "homeTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "result": "Gujarat Titans won "
+    },
+    {
+      "matchOrder": "MATCH 11",
+      "venue": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
+      "dateTime": "MAR, SAT 30 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "result": "Lucknow Super Giants won "
+    },
+    {
+      "matchOrder": "MATCH 10",
+      "venue": "M Chinnaswamy Stadium, Bengaluru",
+      "dateTime": "MAR, FRI 29 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "result": "Royal Challengers Bengaluru won "
+    },
+    {
+      "matchOrder": "MATCH 9",
+      "venue": "Sawai Mansingh Stadium, Jaipur",
+      "dateTime": "MAR, THU 28 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "result": "Rajasthan Royals won "
+    },
+    {
+      "matchOrder": "MATCH 8",
+      "venue": "Rajiv Gandhi International Stadium, Hyderabad",
+      "dateTime": "MAR, WED 27 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "result": "Sunrisers Hyderabad won "
+    },
+    {
+      "matchOrder": "MATCH 7",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "dateTime": "MAR, TUE 26 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "result": "Chennai Super Kings won "
+    },
+    {
+      "matchOrder": "MATCH 6",
+      "venue": "M Chinnaswamy Stadium, Bengaluru",
+      "dateTime": "MAR, MON 25 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "result": "Royal Challengers Bengaluru won "
+    },
+    {
+      "matchOrder": "MATCH 5",
+      "venue": "Narendra Modi Stadium, Ahmedabad",
+      "dateTime": "MAR, SUN 24 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Gujarat Titans",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Mumbai Indians",
+        "logo": ""
+      },
+      "result": "Gujarat Titans won "
+    },
+    {
+      "matchOrder": "MATCH 4",
+      "venue": "Sawai Mansingh Stadium, Jaipur",
+      "dateTime": "MAR, SUN 24 , 3:30 pm IST",
+      "homeTeam": {
+        "name": "Rajasthan Royals",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Lucknow Super Giants",
+        "logo": ""
+      },
+      "result": "Rajasthan Royals won "
+    },
+    {
+      "matchOrder": "MATCH 3",
+      "venue": "Eden Gardens, Kolkata",
+      "dateTime": "MAR, SAT 23 , 7:30 pm IST",
+      "homeTeam": {
+        "name": "Kolkata Knight Riders",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Sunrisers Hyderabad",
+        "logo": ""
+      },
+      "result": "Kolkata Knight Riders won "
+    },
+    {
+      "matchOrder": "MATCH 2",
+      "venue": "PCA New Stadium, Mullanpur",
+      "dateTime": "MAR, SAT 23 , 3:30 pm IST",
+      "homeTeam": {
+        "name": "Punjab Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Delhi Capitals",
+        "logo": ""
+      },
+      "result": "Punjab Kings won "
+    },
+    {
+      "matchOrder": "MATCH 1",
+      "venue": "MA Chidambaram Stadium, Chennai",
+      "dateTime": "MAR, FRI 22 , 8:00 pm IST",
+      "homeTeam": {
+        "name": "Chennai Super Kings",
+        "logo": ""
+      },
+      "awayTeam": {
+        "name": "Royal Challengers Bengaluru",
+        "logo": ""
+      },
+      "result": "Chennai Super Kings won "
+    }
+  ]
 const teamLogos = {
     "Chennai Super Kings": "https://scores.iplt20.com/ipl/teamlogos/CSK.png",
     "Royal Challengers Bengaluru": "https://scores.iplt20.com/ipl/teamlogos/aFPMviEPyJ1710927747rcb.png",
@@ -28,14 +1005,27 @@ const Events = () => {
         fetchMatchResults();
     }, []);
 
+    // const fetchMatchResults = async () => {
+    //     try {
+    //         const response = await fetch('/api/matchresults');
+    //         if (!response.ok) {
+    //             throw new Error('Failed to fetch match results');
+    //         }
+    //         const data = await response.json();
+    //         const matchesWithActiveTab = data.map(match => ({ ...match, activeTab: 'stats' }));
+
+    //         setMatchResults(matchesWithActiveTab);
+    //         setLoading(false); // Update loading state once data is fetched
+
+    //     } catch (error) {
+    //         console.error('Error fetching match results:', error);
+    //     }
+    // };
     const fetchMatchResults = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/matchresults');
-            if (!response.ok) {
-                throw new Error('Failed to fetch match results');
-            }
-            const data = await response.json();
-            const matchesWithActiveTab = data.map(match => ({ ...match, activeTab: 'stats' }));
+           
+          
+            const matchesWithActiveTab = sampleData.map(match => ({ ...match, activeTab: 'stats' }));
 
             setMatchResults(matchesWithActiveTab);
             setLoading(false); // Update loading state once data is fetched
