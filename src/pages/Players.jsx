@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Loader from "../components/Loader";
+import Loader from "../components/Loader.jsx";
 // sample API resposne
 const sampleData = {
   "team": "chennai-super-kings",

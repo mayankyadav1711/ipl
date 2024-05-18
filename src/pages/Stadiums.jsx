@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination, EffectCoverflow } from "swiper/modules";
 import stadium from "../components/images/motera.webp";
-import Loader from "../components/Loader"
+import Loader from "../components/Loader.jsx"
 const stadiumImages = [
   {
     image:

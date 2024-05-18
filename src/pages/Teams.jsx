@@ -10,7 +10,7 @@ import mi from "../components/images/mi.png"
 import pk from "../components/images/pk.png"
 import rr from "../components/images/rr.png"
 import srh from "../components/images/srh.png"
-import Loader from "../components/Loader";
+import Loader from "../components/Loader.jsx";
 
 // sample API response 
 const sampleData = [

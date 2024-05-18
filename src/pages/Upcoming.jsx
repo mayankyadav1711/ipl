@@ -3,7 +3,7 @@ import csk from "../components/images/csk.png";
 import rcb from "../components/images/rcb.png";
 import vs from "../components/images/versus.png";
 import trophy from "../components/images/trophy.svg";
-import Loader from "../components/Loader";
+import Loader from "../components/Loader.jsx";
 //sample API response 
 const sampleData = [
     {

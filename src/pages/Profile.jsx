@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import bg from "../components/images/motera.webp";
 import dhoni from "../components/images/dhoni.png";
-import Loader from "../components/Loader"
+import Loader from "../components/Loader.jsx"
 import toast from 'react-hot-toast';
 //sample API response 
 const sampleData = {

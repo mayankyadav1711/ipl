@@ -6,7 +6,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { IoIosMore } from "react-icons/io";
 import { IoIosRefresh } from "react-icons/io";
-import Loader from "../components/Loader";
+import Loader from "../components/Loader.jsx";
 import { GrStatusGood } from "react-icons/gr";
 
 //sample API response
