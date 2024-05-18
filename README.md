@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--     <title>IPL Dashboard README</title> -->
-    <style>
+<!--     <style>
         img {
             display: block;
             margin: 0 auto;
         }
-    </style>
+    </style> -->
 </head>
 <body>
 
