@@ -8,6 +8,7 @@ import { IoIosMore } from "react-icons/io";
 import { IoIosRefresh } from "react-icons/io";
 import Loader from "../components/Loader";
 import { GrStatusGood } from "react-icons/gr";
+import wicket from "../components/images/wicket.png"
 const dataSample = [
   {
     "id": "043bb613-d8ee-4287-9ccb-a298a0f9c389",
@@ -256,7 +257,7 @@ const LiveScore = () => {
       style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
       className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl"
     >
-      <GoPrimitiveDot />
+      <img src={wicket} width={20} />
     </button>
     <div className="text-left">
       <p className="mt-3 text-lg font-semibold ml-4">
