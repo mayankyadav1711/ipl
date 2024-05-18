@@ -53,7 +53,7 @@
 
 <h3>Stadiums 🏟️</h3>
 <p>Learn about the stadiums hosting the matches, including location and capacity details.</p>
-<figure><img src="https://mayank-1.gitbook.io/~gitbook/image?url=https%3A%2F%2F2577257792-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fxx05n1rHmapxHfX6UOvV%252Fuploads%252FK5A2aX0ZNIrOzSNjaXhB%252FScreenshot%25202024-05-18%2520205135.png%3Falt%3Dmedia%26token%3Dda60c938-fb8e-49ed-bac8-ff352ec8e93a&width=400&dpr=2&quality=100&sign=0773e6dd65a437899ed995f6fb68e7383d53cd247ca58c5064bc025e3fe81484" alt="Stadiums"></figure>
+<figure><img src="https://i.ibb.co/85ySrCQ/stadiums.png" alt="Stadiums"></figure>
 
 <h3>Match Results 🥇</h3>
 <p>Access results of completed matches, including scores and highlights.</p>
