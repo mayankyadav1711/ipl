@@ -1,24 +1,22 @@
 
-
 <h1>IPL Dashboard</h1>
 <figure><img src="https://i.ibb.co/qNZnxvn/Screenshot-2024-05-18-202551.png" alt=""> </figure> 
 
 <h2>Overview</h2>
 <p>Our IPL Dashboard provides real-time updates and comprehensive information about the Indian Premier League (IPL). Utilizing web scraping techniques instead of paid APIs, we've created a dynamic and interactive platform to keep cricket enthusiasts informed and engaged.</p>
-<img src="path/to/overview-image.png" alt="Overview">
+
 
 <h2>Technologies</h2>
 <ul>
     <li><strong>Frontend</strong>: React.js, Tailwind CSS</li>
     <li><strong>Backend</strong>: Node.js, Express.js</li>
 </ul>
-<img src="path/to/technologies-image.png" alt="Technologies">
 
 <h2>Features</h2>
 
 <h3>Live Score (Real-time Update) 🏏</h3>
 <p>Stay updated with live scores from ongoing matches, bringing the thrill of the game right to your screen.</p>
-<img src="path/to/live-score-image.png" alt="Live Score">
+<img src="https://mayank-1.gitbook.io/~gitbook/image?url=https%3A%2F%2F2577257792-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fxx05n1rHmapxHfX6UOvV%252Fuploads%252FVciIDAO2NVwo9O6QQsr6%252FScreenshot%25202024-05-18%2520202551.png%3Falt%3Dmedia%26token%3D62e39c6f-f199-4593-8fa8-14c0a9754ab4&width=768&dpr=4&quality=100&sign=d4fd2dab1042206043c92e2766a001d8e1a1fdeda170ce5c5f727287697e3b8b" alt="Live Score">
 
 <h3>IPL Points Table 📊</h3>
 <p>Track the performance and rankings of all IPL teams in an easy-to-understand format.</p>
