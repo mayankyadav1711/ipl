@@ -307,7 +307,7 @@ const LiveScore = () => {
       style={{ color: "#2154bce6", backgroundColor: "#e5fafb" }}
       className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl"
     >
-      <img src={wicket} width={20} />
+      <GoPrimitiveDot />
     </button>
     <div className="text-left">
       <p className="mt-3 text-lg font-semibold ml-4">
