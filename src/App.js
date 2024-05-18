@@ -13,7 +13,7 @@ import Players from "./pages/Players";
 import Events from "./pages/Events";
 import Upcoming from "./pages/Upcoming";
 import Profile from "./pages/Profile";
-
+import toast, { Toaster } from 'react-hot-toast';
 const App = () => {
   const {
     setCurrentColor,
@@ -36,6 +36,26 @@ const App = () => {
 
   return (
     <>
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+  gutter={8}
+  containerClassName=""
+  containerStyle={{ zIndex: '9999999999' }} // Ensure the container has a high z-index
+  toastOptions={{
+    className: '',
+    duration: 5000,
+    style: {
+      background: 'white',
+      color: 'black',
+      fontSize: '16px',
+    },
+    success: {
+      duration: 3000,
+     
+    },
+  }}
+/>
       <div className="fixed top-0 w-full z-50">
         <Navbar />
       </div>

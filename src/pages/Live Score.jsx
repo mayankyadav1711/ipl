@@ -8,7 +8,22 @@ import { IoIosMore } from "react-icons/io";
 import { IoIosRefresh } from "react-icons/io";
 import Loader from "../components/Loader";
 import { GrStatusGood } from "react-icons/gr";
-
+const dataSample = [
+  {
+    "id": "043bb613-d8ee-4287-9ccb-a298a0f9c389",
+    "dateTimeGMT": "2024-05-18T14:00:00",
+    "matchType": "t20",
+    "status": "Play stopped due to rain - Chennai Super Kings opt to bowl",
+    "ms": "live",
+    "t1": "Chennai Super Kings [CSK]",
+    "t2": "Royal Challengers Bengaluru [RCB]",
+    "t1s": "",
+    "t2s": "31/0 (3)",
+    "t1img": "https://g.cricapi.com/iapi/135-637852956181378533.png?w=48",
+    "t2img": "https://g.cricapi.com/iapi/21439-638468478038395955.jpg?w=48",
+    "series": "Indian Premier League 2024"
+  }
+]
 const LiveScore = () => {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -227,7 +242,7 @@ const LiveScore = () => {
     </button>
     <div className="text-left">
       <p className="mt-3 text-lg font-semibold ml-4">
-        {calculateStrikeRate(match.t1s)}
+        {calculateStrikeRate(match.t2s)}
       </p>
       <p className="text-xl font-bold text-gray-800 mt-1 ml-4">
         Strike Rate
@@ -245,7 +260,7 @@ const LiveScore = () => {
     </button>
     <div className="text-left">
       <p className="mt-3 text-lg font-semibold ml-4">
-        {getWicketsLost(match.t1s)}
+        {getWicketsLost(match.t2s)}
       </p>
       <p className="text-xl font-bold text-gray-800 mt-1 ml-4">
         Wickets Lost

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import bg from "../components/images/motera.webp";
 import dhoni from "../components/images/dhoni.png";
 import Loader from "../components/Loader"
+import toast from 'react-hot-toast';
 const Profile = () => {
   const [playerData, setPlayerData] = useState([]);
   const [backgroundImage, setBackgroundImage] = useState(bg);
@@ -26,6 +27,7 @@ const Profile = () => {
 
         if (teamname === "chennai-super-kings" && playercode === "1") {
           setPlayAudio(true);
+          toast.success("Thala Supremacy 😎");
         }
       } catch (error) {
         console.error("Error fetching player data:", error);
