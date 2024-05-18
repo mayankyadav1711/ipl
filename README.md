@@ -92,7 +92,7 @@
 </ul>
 
 <h2>Note</h2>
-<p>This project is strictly for educational purposes and is not intended for commercial use. We do not encourage using web scraping for profit-driven activities. Due to security reasons and to adhere to ethical guidelines, we cannot provide the backend code. Our aim is to demonstrate the potential of web scraping in educational projects and not to undermine any website's integrity.</p>
+<p><b>This project is strictly for educational purposes and is not intended for commercial use. We do not encourage using web scraping for profit-driven activities. Due to security reasons and to adhere to ethical guidelines, we cannot provide the backend code. Our aim is to demonstrate the potential of web scraping in educational projects and not to undermine any website's integrity.</b></p>
 
 </body>
 </html>
