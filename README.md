@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPL Dashboard README</title>
+<!--     <title>IPL Dashboard README</title> -->
     <style>
         img {
             display: block;
@@ -14,7 +14,7 @@
 <body>
 
 <h1>IPL Dashboard</h1>
-<figure><img src="https://i.ibb.co/qNZnxvn/Screenshot-2024-05-18-202551.png" alt=""></figure>
+<!-- <figure><img src="https://i.ibb.co/qNZnxvn/Screenshot-2024-05-18-202551.png" alt=""></figure> -->
 
 <h2>Overview</h2>
 <p>Our IPL Dashboard provides real-time updates and comprehensive information about the Indian Premier League (IPL). Utilizing web scraping techniques instead of paid APIs, we've created a dynamic and interactive platform to keep cricket enthusiasts informed and engaged.</p>
