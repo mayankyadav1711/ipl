@@ -6,11 +6,11 @@ const Footer = () => (
     <h1 className="text-lg font-semibold mb-4">
       Made by {" "}
       
-      <a to="https://www.linkedin.com/in/mayankyadav17/" target="_blank" className="text-blue-600 font-medium">
+      <a href="https://www.linkedin.com/in/mayankyadav17/" target="_blank" className="text-blue-600 font-medium">
         Mayank Yadav
       </a>{" "}
       and{" "}
-      <a to="https://www.linkedin.com/in/divyakaurani/" target="_blank" className="text-blue-600 font-medium">
+      <a href="https://www.linkedin.com/in/divyakaurani/" target="_blank" className="text-blue-600 font-medium">
         Divya Kaurani 
         
       </a>
